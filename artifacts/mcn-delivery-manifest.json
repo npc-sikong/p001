@@ -1,0 +1,460 @@
+{
+  "version": "V23 cycle-settled service orders, configurable dispute routing (default platform), MCN, recharge-based promotion, USDT wallet, multi-currency (station pricing currency + USDT settlement), plus reviewed development docs",
+  "date": "2026-10-06",
+  "prototypeOnly": true,
+  "sourceDistAndHttpEqual": true,
+  "nodeChecks": {
+    "serviceOrders": 11,
+    "newMcn": 46,
+    "existingV22": 26,
+    "intl": 8
+  },
+  "docs": 15,
+  "screenshots": 30,
+  "files": {
+    ".work/currency.js": {
+      "bytes": 18410,
+      "sha256": "cc983817ff8ce94c22b6c78c7f81da2bd3f98670839cd979b6a8caee6dce4373"
+    },
+    ".work/mcn-business.css": {
+      "bytes": 21233,
+      "sha256": "499ae78b0a2577c0833fbd8c5047c499456a2d47632899033769493dc6a72840"
+    },
+    ".work/mcn-business.js": {
+      "bytes": 75413,
+      "sha256": "307d0fb4988d8d11c495fc4aca4df97ded0360a34a56663382724c84f2ef3f81"
+    },
+    ".work/mcn-promotion.css": {
+      "bytes": 5452,
+      "sha256": "51e71e72502a7a6f02e484eec347f308282b678dd6adf9d47134273ce3b6463a"
+    },
+    ".work/mcn-promotion.js": {
+      "bytes": 128595,
+      "sha256": "ed87ab9bd68a8a3130d7f04d41398368e5399971152cfbfca921854655a9ffc5"
+    },
+    ".work/service-cycle.css": {
+      "bytes": 3708,
+      "sha256": "531cea769db6562498915cd33cb1cf1935e034c61052c47f042d6ca98252e0ab"
+    },
+    ".work/service-cycle.js": {
+      "bytes": 50158,
+      "sha256": "56d1221550f4f1d9d0d0531c16ac8539244258697452683b730419586bb358d0"
+    },
+    ".work/v22-built.html": {
+      "bytes": 5185188,
+      "sha256": "2422d611caef0389ff678af758c5dc9289bf654fbaa3a7ed396411b429ba0e61"
+    },
+    ".work/v23.css": {
+      "bytes": 112878,
+      "sha256": "5bb3b9f0ade6640d53172e5963a0d85a7ebe0497e4f4b0baeb1f192e12798dcc"
+    },
+    ".work/v23.js": {
+      "bytes": 88801,
+      "sha256": "216d278f81121c470c106cc760eca266e2f3584520679b477021c1acb3a518b7"
+    },
+    ".work/wallet-promotion.css": {
+      "bytes": 4671,
+      "sha256": "2045a799fa56222660bdf3d504f5e5403bc63b3fb001f9ed6585b037726c4a47"
+    },
+    ".work/wallet-promotion.js": {
+      "bytes": 61772,
+      "sha256": "a86feb5b7b40b4dd29433bb22b1b2993946cb73e120430b76f59bdd195df54a4"
+    },
+    "artifacts/fx-admin-rates.png": {
+      "bytes": 407233,
+      "sha256": "3d7a206bce9f4d73083c0ad3956be1973084f12e2f9afbd04b7e4ae3671feda0"
+    },
+    "artifacts/intl-checks.txt": {
+      "bytes": 1117,
+      "sha256": "f1f12a090cbf8ea695214929e4af29f2829ef38767bea4ef960e7ccb34bb1804"
+    },
+    "artifacts/mcn-admin-guilds.png": {
+      "bytes": 278908,
+      "sha256": "1c10504bbb26a34b6b3e1e5a81123e8393e30ee70dce62a0734871bd6c5d2fc3"
+    },
+    "artifacts/mcn-admin-help.png": {
+      "bytes": 211542,
+      "sha256": "5d81c5da616938d91298557c1c7e3ea337e1365344d72671cb902b73aef00364"
+    },
+    "artifacts/mcn-admin-pages.json": {
+      "bytes": 605,
+      "sha256": "1c779af87c108970598ac04372b529fd0d0a074500229424608d82845c601ec3"
+    },
+    "artifacts/mcn-admin-report.png": {
+      "bytes": 369874,
+      "sha256": "86dd81364b2ecd8f600c28021c0e63e21e738a777e91db7f3de6426b4e61480d"
+    },
+    "artifacts/mcn-admin-rules.png": {
+      "bytes": 293937,
+      "sha256": "7e7249d90e3635765e4b469ccbf2a7c73dad511391dedf757f886e21baeb803f"
+    },
+    "artifacts/mcn-admin-wallet.png": {
+      "bytes": 302240,
+      "sha256": "4fded0a0ffd7644324a17a28f0f9c3071672b0b42ce149ffbb03a85af4e7b39c"
+    },
+    "artifacts/mcn-browser-acceptance.json": {
+      "bytes": 7102,
+      "sha256": "b2e1f66994268be0ea710ac9210d18068dc18d170bde31aede1b3834bba2e8e0"
+    },
+    "artifacts/mcn-checks.txt": {
+      "bytes": 3876,
+      "sha256": "42ccf085e6c12dfa8a8101f6cbbde86f3fba05189c4cb64ac7ded6645022a56d"
+    },
+    "artifacts/mcn-existing-checks.txt": {
+      "bytes": 1995,
+      "sha256": "4ccc702822ed67a7e74b0b3d0ff1454dc0c6e0b30a330c2d926e990653a59821"
+    },
+    "artifacts/mcn-h5-guild-375.png": {
+      "bytes": 119119,
+      "sha256": "e83093a456300aef3f31059fc7b412046d63a253676f0f5b4ee371b6fcd71bfa"
+    },
+    "artifacts/mcn-h5-help-320.png": {
+      "bytes": 97520,
+      "sha256": "7022123c0725174affcb646d8007e222463934183b0ec9a775a47a96311c04e8"
+    },
+    "artifacts/mcn-h5-help-375.png": {
+      "bytes": 104196,
+      "sha256": "e002c3f3c23bb9f69bccf29333db47f4baccf630dbc405be90cc9f94eab91b74"
+    },
+    "artifacts/mcn-h5-invite-375.png": {
+      "bytes": 165651,
+      "sha256": "1b328c3b73c4c0672023818272ed580a636774893350e74ebcda133fab1ba0ac"
+    },
+    "artifacts/mcn-h5-pay-375.png": {
+      "bytes": 85936,
+      "sha256": "c9a9d83ae660c8f0b473e18a7ea366e594d3dff9298efc48427dd2e7c45e6e6d"
+    },
+    "artifacts/mcn-h5-promotion-375.png": {
+      "bytes": 139960,
+      "sha256": "9a5afb48caca941181e7ba925f5c621b99d2c1fa6e5b606734ea96183c387330"
+    },
+    "artifacts/mcn-h5-recharge-375.png": {
+      "bytes": 112585,
+      "sha256": "dc102d9403b45a57f77bd90962c23e1b9830bac7c5ee195c407006288892884f"
+    },
+    "artifacts/mcn-h5-todo-375.png": {
+      "bytes": 47090,
+      "sha256": "7853513eca748538c09344060a3e2e2afc444119536e89d50eae9af70882f569"
+    },
+    "artifacts/mcn-h5-wallet-375.png": {
+      "bytes": 118844,
+      "sha256": "d5d8340754985e8e9706a800c56cc53fb7182bc35239983e4ecca681d1bc0244"
+    },
+    "artifacts/mcn-owner-scope.png": {
+      "bytes": 239110,
+      "sha256": "a2cc0ba2907e743f25547aecf39e0edea76566fac73918ba73fc212485459fbb"
+    },
+    "artifacts/mcn-pc-deposit.png": {
+      "bytes": 289407,
+      "sha256": "28c4e78cefbd27b833485b93d618f5a469fe175a3196849df2e3b009a38de138"
+    },
+    "artifacts/mcn-pc-guild-profile.png": {
+      "bytes": 325016,
+      "sha256": "7640a456c0918482d74d00a639a92b9027f7f25ff135e48efe368a7a48387a3a"
+    },
+    "artifacts/mcn-pc-guilds.png": {
+      "bytes": 152385,
+      "sha256": "2f93a2f5470780ba726a5bd84ca7cd2cfe9aff6209eb2ffdff1c00cde24ed06c"
+    },
+    "artifacts/mcn-pc-overview.png": {
+      "bytes": 359863,
+      "sha256": "5f3609cc0f68708d52d8018fb7c3d0bee72b3a43f26303721d8ae1967cad315e"
+    },
+    "artifacts/mcn-pc-promotion.png": {
+      "bytes": 432589,
+      "sha256": "8fe8981555b799388bdd202839f7c408fb98bdc2b895c4f5d6961438ad53d6f8"
+    },
+    "artifacts/mcn-pc-recruit.png": {
+      "bytes": 292684,
+      "sha256": "7767bc1aa45aae65c984b2d33615f158d5b05e4e9e75f7837507d9e775de4eb5"
+    },
+    "artifacts/mcn-pc-signed.png": {
+      "bytes": 319991,
+      "sha256": "6a461d2424fe3cb56b222b9b2544362957d0ba104a701824040d0fd437385f12"
+    },
+    "artifacts/mcn-pc-wallet.png": {
+      "bytes": 290419,
+      "sha256": "c36d8c92474bef8903d69cf72e57001c08f44b9a5f82a31c728ac3c5237bdaa3"
+    },
+    "artifacts/mcn-screenshots.html": {
+      "bytes": 15689,
+      "sha256": "e9e421defa8cdb8a2eeacf5e7af84aad48bb8fdbf756206be8b7d17de61442fc"
+    },
+    "artifacts/service-checks.txt": {
+      "bytes": 1219,
+      "sha256": "a7a63f6d9bced8decfea6eedb0479be2480c40d89708dddf25e9b8bce59c61df"
+    },
+    "artifacts/svc-admin-case-detail.png": {
+      "bytes": 190226,
+      "sha256": "11cabfae8a65df306fb0a6e99810d454d35beceaf62aa5948476d47c01fc407b"
+    },
+    "artifacts/svc-admin-cases.png": {
+      "bytes": 217777,
+      "sha256": "b7a0c5b8fa8524f8b8e4779348014b5787d6bf175338387ea29e5a8327b027ac"
+    },
+    "artifacts/svc-h5-booking-375.png": {
+      "bytes": 77416,
+      "sha256": "952b4fee3aab3b7c8a6eede2711a4bd7f5350625915b3dc7bf2068c3ac7fe62c"
+    },
+    "artifacts/svc-h5-guild-375.png": {
+      "bytes": 88943,
+      "sha256": "b5be9af041dd7302c92430db4b8be00ef1c5374108bbaa0f28962aa628d7d4d8"
+    },
+    "artifacts/svc-h5-order-375.png": {
+      "bytes": 68793,
+      "sha256": "a03cc1f7eb74e2b838c563a3c366f6f57bc94dce72996804008fedc2fc29424c"
+    },
+    "artifacts/svc-pc-order.png": {
+      "bytes": 431171,
+      "sha256": "00386ff26e89642c8fac4730c41bfaa75ad56b77b815292cfe559deb5ff3c0da"
+    },
+    "dist/artifacts/fx-admin-rates.png": {
+      "bytes": 407233,
+      "sha256": "3d7a206bce9f4d73083c0ad3956be1973084f12e2f9afbd04b7e4ae3671feda0"
+    },
+    "dist/artifacts/intl-checks.txt": {
+      "bytes": 1117,
+      "sha256": "f1f12a090cbf8ea695214929e4af29f2829ef38767bea4ef960e7ccb34bb1804"
+    },
+    "dist/artifacts/mcn-admin-guilds.png": {
+      "bytes": 278908,
+      "sha256": "1c10504bbb26a34b6b3e1e5a81123e8393e30ee70dce62a0734871bd6c5d2fc3"
+    },
+    "dist/artifacts/mcn-admin-help.png": {
+      "bytes": 211542,
+      "sha256": "5d81c5da616938d91298557c1c7e3ea337e1365344d72671cb902b73aef00364"
+    },
+    "dist/artifacts/mcn-admin-pages.json": {
+      "bytes": 605,
+      "sha256": "1c779af87c108970598ac04372b529fd0d0a074500229424608d82845c601ec3"
+    },
+    "dist/artifacts/mcn-admin-report.png": {
+      "bytes": 369874,
+      "sha256": "86dd81364b2ecd8f600c28021c0e63e21e738a777e91db7f3de6426b4e61480d"
+    },
+    "dist/artifacts/mcn-admin-rules.png": {
+      "bytes": 293937,
+      "sha256": "7e7249d90e3635765e4b469ccbf2a7c73dad511391dedf757f886e21baeb803f"
+    },
+    "dist/artifacts/mcn-admin-wallet.png": {
+      "bytes": 302240,
+      "sha256": "4fded0a0ffd7644324a17a28f0f9c3071672b0b42ce149ffbb03a85af4e7b39c"
+    },
+    "dist/artifacts/mcn-browser-acceptance.json": {
+      "bytes": 7102,
+      "sha256": "b2e1f66994268be0ea710ac9210d18068dc18d170bde31aede1b3834bba2e8e0"
+    },
+    "dist/artifacts/mcn-checks.txt": {
+      "bytes": 3876,
+      "sha256": "42ccf085e6c12dfa8a8101f6cbbde86f3fba05189c4cb64ac7ded6645022a56d"
+    },
+    "dist/artifacts/mcn-existing-checks.txt": {
+      "bytes": 1995,
+      "sha256": "4ccc702822ed67a7e74b0b3d0ff1454dc0c6e0b30a330c2d926e990653a59821"
+    },
+    "dist/artifacts/mcn-h5-guild-375.png": {
+      "bytes": 119119,
+      "sha256": "e83093a456300aef3f31059fc7b412046d63a253676f0f5b4ee371b6fcd71bfa"
+    },
+    "dist/artifacts/mcn-h5-help-320.png": {
+      "bytes": 97520,
+      "sha256": "7022123c0725174affcb646d8007e222463934183b0ec9a775a47a96311c04e8"
+    },
+    "dist/artifacts/mcn-h5-help-375.png": {
+      "bytes": 104196,
+      "sha256": "e002c3f3c23bb9f69bccf29333db47f4baccf630dbc405be90cc9f94eab91b74"
+    },
+    "dist/artifacts/mcn-h5-invite-375.png": {
+      "bytes": 165651,
+      "sha256": "1b328c3b73c4c0672023818272ed580a636774893350e74ebcda133fab1ba0ac"
+    },
+    "dist/artifacts/mcn-h5-pay-375.png": {
+      "bytes": 85936,
+      "sha256": "c9a9d83ae660c8f0b473e18a7ea366e594d3dff9298efc48427dd2e7c45e6e6d"
+    },
+    "dist/artifacts/mcn-h5-promotion-375.png": {
+      "bytes": 139960,
+      "sha256": "9a5afb48caca941181e7ba925f5c621b99d2c1fa6e5b606734ea96183c387330"
+    },
+    "dist/artifacts/mcn-h5-recharge-375.png": {
+      "bytes": 112585,
+      "sha256": "dc102d9403b45a57f77bd90962c23e1b9830bac7c5ee195c407006288892884f"
+    },
+    "dist/artifacts/mcn-h5-todo-375.png": {
+      "bytes": 47090,
+      "sha256": "7853513eca748538c09344060a3e2e2afc444119536e89d50eae9af70882f569"
+    },
+    "dist/artifacts/mcn-h5-wallet-375.png": {
+      "bytes": 118844,
+      "sha256": "d5d8340754985e8e9706a800c56cc53fb7182bc35239983e4ecca681d1bc0244"
+    },
+    "dist/artifacts/mcn-owner-scope.png": {
+      "bytes": 239110,
+      "sha256": "a2cc0ba2907e743f25547aecf39e0edea76566fac73918ba73fc212485459fbb"
+    },
+    "dist/artifacts/mcn-pc-deposit.png": {
+      "bytes": 289407,
+      "sha256": "28c4e78cefbd27b833485b93d618f5a469fe175a3196849df2e3b009a38de138"
+    },
+    "dist/artifacts/mcn-pc-guild-profile.png": {
+      "bytes": 325016,
+      "sha256": "7640a456c0918482d74d00a639a92b9027f7f25ff135e48efe368a7a48387a3a"
+    },
+    "dist/artifacts/mcn-pc-guilds.png": {
+      "bytes": 152385,
+      "sha256": "2f93a2f5470780ba726a5bd84ca7cd2cfe9aff6209eb2ffdff1c00cde24ed06c"
+    },
+    "dist/artifacts/mcn-pc-overview.png": {
+      "bytes": 359863,
+      "sha256": "5f3609cc0f68708d52d8018fb7c3d0bee72b3a43f26303721d8ae1967cad315e"
+    },
+    "dist/artifacts/mcn-pc-promotion.png": {
+      "bytes": 432589,
+      "sha256": "8fe8981555b799388bdd202839f7c408fb98bdc2b895c4f5d6961438ad53d6f8"
+    },
+    "dist/artifacts/mcn-pc-recruit.png": {
+      "bytes": 292684,
+      "sha256": "7767bc1aa45aae65c984b2d33615f158d5b05e4e9e75f7837507d9e775de4eb5"
+    },
+    "dist/artifacts/mcn-pc-signed.png": {
+      "bytes": 319991,
+      "sha256": "6a461d2424fe3cb56b222b9b2544362957d0ba104a701824040d0fd437385f12"
+    },
+    "dist/artifacts/mcn-pc-wallet.png": {
+      "bytes": 290419,
+      "sha256": "c36d8c92474bef8903d69cf72e57001c08f44b9a5f82a31c728ac3c5237bdaa3"
+    },
+    "dist/artifacts/mcn-screenshots.html": {
+      "bytes": 15689,
+      "sha256": "e9e421defa8cdb8a2eeacf5e7af84aad48bb8fdbf756206be8b7d17de61442fc"
+    },
+    "dist/artifacts/service-checks.txt": {
+      "bytes": 1219,
+      "sha256": "a7a63f6d9bced8decfea6eedb0479be2480c40d89708dddf25e9b8bce59c61df"
+    },
+    "dist/artifacts/svc-admin-case-detail.png": {
+      "bytes": 190226,
+      "sha256": "11cabfae8a65df306fb0a6e99810d454d35beceaf62aa5948476d47c01fc407b"
+    },
+    "dist/artifacts/svc-admin-cases.png": {
+      "bytes": 217777,
+      "sha256": "b7a0c5b8fa8524f8b8e4779348014b5787d6bf175338387ea29e5a8327b027ac"
+    },
+    "dist/artifacts/svc-h5-booking-375.png": {
+      "bytes": 77416,
+      "sha256": "952b4fee3aab3b7c8a6eede2711a4bd7f5350625915b3dc7bf2068c3ac7fe62c"
+    },
+    "dist/artifacts/svc-h5-guild-375.png": {
+      "bytes": 88943,
+      "sha256": "b5be9af041dd7302c92430db4b8be00ef1c5374108bbaa0f28962aa628d7d4d8"
+    },
+    "dist/artifacts/svc-h5-order-375.png": {
+      "bytes": 68793,
+      "sha256": "a03cc1f7eb74e2b838c563a3c366f6f57bc94dce72996804008fedc2fc29424c"
+    },
+    "dist/artifacts/svc-pc-order.png": {
+      "bytes": 431171,
+      "sha256": "00386ff26e89642c8fac4730c41bfaa75ad56b77b815292cfe559deb5ff3c0da"
+    },
+    "dist/index.html": {
+      "bytes": 5759691,
+      "sha256": "4354a04b0e412b41a9fef200d14410703cb8fffa566de20a0533da61fb405354"
+    },
+    "dist/使用说明.txt": {
+      "bytes": 79042,
+      "sha256": "fba9a2e636f5db1af222edb934f4bfe459082e50f5e402fa3983599e79eb4bc4"
+    },
+    "docs/README.md": {
+      "bytes": 2896,
+      "sha256": "1e76a7e12170d773ca45df5c07e32539b45400554b153c3fa90593fbee431459"
+    },
+    "docs/acceptance/原型业务检查清单.md": {
+      "bytes": 13790,
+      "sha256": "00e29089f63b1398114da48e8644ccd0b2008524c72509fefe20646774b9fb72"
+    },
+    "docs/acceptance/页面与模块对照.md": {
+      "bytes": 24225,
+      "sha256": "a055cb3fdf7d2126325743994afad1af7644de2f71ead86de735196aa849911c"
+    },
+    "docs/decisions/待定参数与决策记录.md": {
+      "bytes": 7301,
+      "sha256": "44579b5fc9f624c3c9f5e67628ea6fb8c4898ad68b9e5968b74ab1992b3b4989"
+    },
+    "docs/modules/01-账号与身份.md": {
+      "bytes": 10894,
+      "sha256": "fddfa5b41c4747dd08503ff2151b348ff337c828847f70d5d7a7ee57f31a4fe0"
+    },
+    "docs/modules/02-论坛与需求.md": {
+      "bytes": 10337,
+      "sha256": "9aaefb7b3fa8d1e24fff6585d8d7bc718df7d9d76c4ed8f8fa3110b13ad6e292"
+    },
+    "docs/modules/03-商品与交付.md": {
+      "bytes": 11381,
+      "sha256": "c207472c5dc8d833b7c76fb0cf258a10953ea3b82ed1124b294b55bef7db84d0"
+    },
+    "docs/modules/04-订单与资金.md": {
+      "bytes": 21283,
+      "sha256": "5f2a5dcd140973d135a99c598aea374d59f8ff7567f2cdf50fe8acc5cfa2dd11"
+    },
+    "docs/modules/05-售后与申诉.md": {
+      "bytes": 10496,
+      "sha256": "85d0d9a058d61b9a10405a9a9c8fd0c05a8f93416ea56d99fddb0e8c7b041cb2"
+    },
+    "docs/modules/06-代理与分成.md": {
+      "bytes": 17938,
+      "sha256": "e3c7daf1db96438f29bb3140fec66ef29fd8434542de663077569f6f8bcdc17d"
+    },
+    "docs/modules/07-公共能力.md": {
+      "bytes": 13562,
+      "sha256": "50d02988a282bee4fa18f264e023b426414bae9cd96530f095cbb3a832fc3917"
+    },
+    "docs/modules/README.md": {
+      "bytes": 5175,
+      "sha256": "722131a91b1a8f2ceaf60bf8cfa71410ee2e671b0f3b2219bdccacae04da1557"
+    },
+    "docs/技术架构与技术选型.md": {
+      "bytes": 50751,
+      "sha256": "f8899fc1a66b74fdd5f76159fd46ee6bbed8e760dffa8428fa345b9e0553af8b"
+    },
+    "docs/陪伴服务平台_两端产品架构建议稿.md": {
+      "bytes": 36523,
+      "sha256": "5d767f086f418cfe0ab48902c58f337b6fcc2421b04c5589b779beb76ea8660b"
+    },
+    "docs/陪伴服务平台_完整产品规划_首稿原文对照.docx": {
+      "bytes": 11825099,
+      "sha256": "887399a61f8fdd20cc88d2679d67a51319a2c1eeae76151a0b3f3fd962b406cb"
+    },
+    "scripts/build-v23.py": {
+      "bytes": 7272,
+      "sha256": "55dacac8b6600c3f416078a9dfc848d54a274428912447901542428facba28b8"
+    },
+    "scripts/package-mcn.py": {
+      "bytes": 5450,
+      "sha256": "ba5c1ea50f3b0bd45570281cd803f0f7156c8902a39e5cdfba11ea7dbcf7986e"
+    },
+    "scripts/verify-intl.cjs": {
+      "bytes": 10944,
+      "sha256": "27bcb3ee2ac86b6f51aef225e89c928ff61f042ba81ad4501a2e99316dc6e7af"
+    },
+    "scripts/verify-mcn.cjs": {
+      "bytes": 39444,
+      "sha256": "73fc8bd21271d21994a125833bb86c69c837b5ea8894792ce2f542b99bd6bca1"
+    },
+    "scripts/verify-service.cjs": {
+      "bytes": 17557,
+      "sha256": "34dd1c500c43571cd103b4ba76f49b5365c1064f86bf30ce0c14af3401e711b8"
+    },
+    "scripts/verify-v22.cjs": {
+      "bytes": 18080,
+      "sha256": "ef66630c0cdb28f2af8141feae9c7bc1badc65dbec8ec3506fc71d6a11661f38"
+    },
+    "使用说明.txt": {
+      "bytes": 79042,
+      "sha256": "fba9a2e636f5db1af222edb934f4bfe459082e50f5e402fa3983599e79eb4bc4"
+    },
+    "陪伴服务平台_三端交互原型.html": {
+      "bytes": 5759691,
+      "sha256": "4354a04b0e412b41a9fef200d14410703cb8fffa566de20a0533da61fb405354"
+    }
+  }
+}

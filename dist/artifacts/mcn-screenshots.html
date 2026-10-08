@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伴屿 V23 · 服务订单、公会、会员推广与余额钱包演示截图</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f6f5fa;color:#262332;font-family:system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65}
+    main{max-width:1360px;margin:auto;padding:32px 24px}h1{font-size:28px;margin:0 0 8px}p{margin:0 0 20px}.note{background:white;border:1px solid #e7e3f1;border-radius:16px;padding:20px;margin-bottom:28px}.links a{display:inline-block;margin:4px 18px 4px 0;color:#6954b6}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}figure{margin:0;background:white;border-radius:16px;overflow:hidden;border:1px solid #e7e3f1}figure>a{display:block;background:#efedf4;padding:12px;text-align:center}img{display:block;width:100%;height:auto;margin:auto}figure.phone img{width:auto;max-width:100%;max-height:680px}figcaption{padding:18px}h2{font-size:18px;margin:0 0 5px}figcaption p{margin:0;color:#66616f;font-size:14px}footer{margin-top:28px;color:#77717f;font-size:14px}@media(max-width:760px){main{padding:20px 12px}.grid{grid-template-columns:1fr}h1{font-size:23px}}
+  </style>
+</head>
+<body>
+<main>
+  <h1>服务订单、公会、会员推广与余额钱包 · 实际运行截图</h1>
+  <p>伴屿 V23 · 点击截图查看原图</p>
+  <div class="note">
+    <p>服务订单按本轮规则：会员选择服务期与结算周期（每 1 / 3 / 7 天），下单一次付清整个服务期；每个周期结束后次日 00:00 自动结算给服务者。首次服务前可取消并全额退回余额；开始后合作正常不能无故取消，只能以服务不达标为由申请中止（可附图片），退还尚未结算的费用。中止申请的处理方式可在后台设置，默认直接由平台处理，也可改为先由公会处理（服务者签约公会时，24 小时内处理，会员不满意可申诉平台）；平台 24 小时内处理并记录处理人；结果出来后双方有 24 小时异议期，服务者可对订单与结果提出异议并提供材料，期满无异议才执行。</p>
+    <p>会员推广：直推会员累计充值达到后台门槛（默认 100 USDT）为有效推广；推广等级只按有效会员数升级；直推会员用余额消费并确认后按“消费额 × 等级比例”分红，每日 00:00 结算入账余额钱包。首期只启用 USDT：商品定价、支付与余额钱包都用 USDT，不需要换算；其他币种已预留，汇率每天自动获取一次，获取失败时手动录入（见“币种与汇率”截图）。余额钱包：充值余额仅可消费，推广分红与订单退款进入可提现余额。</p>
+    <p>验证：Node 周期结算服务 11 组、公会推广钱包 46 组、多语言与多币种 8 组及既有 26 组业务检查全部通过；浏览器服务订单流程 PC / H5 各 12 步、钱包与推广流程各 12 步、公会流程各 17 步通过；22 个页面 × 6 个身份逐个按钮点击（PC 3837 次、H5 935 次）无脚本错误。资金、链上地址、审核与回执均为本地模拟，不代表生产能力。</p>
+    <div class="links"><a href="../">打开原型</a><a href="../使用说明.txt">使用说明</a><a href="mcn-browser-acceptance.json">浏览器验收记录</a><a href="service-checks.txt">服务订单业务检查</a><a href="mcn-checks.txt">公会、推广与钱包业务检查</a><a href="mcn-existing-checks.txt">既有业务检查</a></div>
+  </div>
+  <div class="grid">
+  <figure class=""><a href="svc-pc-order.png" target="_blank" rel="noopener"><img src="svc-pc-order.png" alt="PC · 周期结算服务订单" loading="lazy"></a><figcaption><h2>PC · 周期结算服务订单</h2><p>一次付清 7 天服务、每 3 天结算：每期金额与状态（已结算 / 暂停结算）；中止申请卡片显示当前处理人、异议期截止与剩余时间、处理结果，会员可申诉到平台。</p></figcaption></figure>
+  <figure class="phone"><a href="svc-h5-booking-375.png" target="_blank" rel="noopener"><img src="svc-h5-booking-375.png" alt="H5 375 · 选择服务期与结算周期" loading="lazy"></a><figcaption><h2>H5 375 · 选择服务期与结算周期</h2><p>按天商品可选 1 / 3 / 7 / 14 天，结算周期每 1 / 3 / 7 天；一次付清、到期自动结算、开始前可取消、开始后仅能因不达标中止。</p></figcaption></figure>
+  <figure class="phone"><a href="svc-h5-order-375.png" target="_blank" rel="noopener"><img src="svc-h5-order-375.png" alt="H5 375 · 订单结算周期" loading="lazy"></a><figcaption><h2>H5 375 · 订单结算周期</h2><p>手机端订单页：服务期、结算周期、已结算 / 已退款 / 未结算，以及每一期的结算状态。</p></figcaption></figure>
+  <figure class="phone"><a href="svc-h5-guild-375.png" target="_blank" rel="noopener"><img src="svc-h5-guild-375.png" alt="H5 375 · 公会售后处理" loading="lazy"></a><figcaption><h2>H5 375 · 公会售后处理</h2><p>当前为默认的直接由平台处理，页面显示提示；此前按先由公会处理提交的申请仍在此处理（截图中的申请处于异议期）。</p></figcaption></figure>
+  <figure class=""><a href="svc-admin-cases.png" target="_blank" rel="noopener"><img src="svc-admin-cases.png" alt="后台 · 服务中止与争议" loading="lazy"></a><figcaption><h2>后台 · 服务中止与争议</h2><p>处理方式设置（默认直接由平台处理，可改为先由公会处理；只对之后的申请生效）；公会处理中 / 平台待处理 / 异议期 / 已超时统计；列表含会员 → 服务者（公会）、不达标原因、是否含图片、暂停结算金额、当前环节与处理人、时限。</p></figcaption></figure>
+  <figure class=""><a href="svc-admin-case-detail.png" target="_blank" rel="noopener"><img src="svc-admin-case-detail.png" alt="后台 · 申请详情与图片材料" loading="lazy"></a><figcaption><h2>后台 · 申请详情与图片材料</h2><p>查看会员与服务者的说明和图片、公会处理记录与时间线；平台环节可领取（记录处理人）并作出处理或复核。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-overview.png" target="_blank" rel="noopener"><img src="mcn-pc-overview.png" alt="PC · 公会管理概览" loading="lazy"></a><figcaption><h2>PC · 公会管理概览</h2><p>管理者看板：签约成员、待处理入会申请、成员确认流水、公会分成与保证金；招募开关、默认分成与经营工具。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-recruit.png" target="_blank" rel="noopener"><img src="mcn-pc-recruit.png" alt="PC · 成员与签约" loading="lazy"></a><figcaption><h2>PC · 成员与签约</h2><p>统一的“邀请加入公会”：选择本站会员或服务者、分成比例与合作期限；成员业绩、调整分成与解约；邀请进度可撤回，入会申请可同意或拒绝。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-signed.png" target="_blank" rel="noopener"><img src="mcn-pc-signed.png" alt="PC · 我的公会（签约成员）" loading="lazy"></a><figcaption><h2>PC · 我的公会（签约成员）</h2><p>受邀会员入驻并确认签约后的成员视角：分成比例、合作期限、公会分成明细、签约条款与离会入口。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-promotion.png" target="_blank" rel="noopener"><img src="mcn-pc-promotion.png" alt="PC · 会员推广" loading="lazy"></a><figcaption><h2>PC · 会员推广</h2><p>好友累计充值达标为有效推广；按有效会员数升级；好友余额消费确认后按消费额 × 等级比例分红，每日 00:00 入账钱包。含邀请码、二维码、海报、好友累计充值与分红明细。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-guilds.png" target="_blank" rel="noopener"><img src="mcn-pc-guilds.png" alt="PC · 公会广场" loading="lazy"></a><figcaption><h2>PC · 公会广场</h2><p>本站正常经营的公会：招募状态、保障金、成员数、默认分成与合作期；服务者可直接申请加入（已申请则显示状态）。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-guild-profile.png" target="_blank" rel="noopener"><img src="mcn-pc-guild-profile.png" alt="PC · 公会主页" loading="lazy"></a><figcaption><h2>PC · 公会主页</h2><p>公开的公会资料、签约服务者（卡片带公会标识）、公会信息与服务保障说明。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-wallet.png" target="_blank" rel="noopener"><img src="mcn-pc-wallet.png" alt="PC · 我的钱包（USDT）" loading="lazy"></a><figcaption><h2>PC · 我的钱包（USDT）</h2><p>余额卡：总余额（≈D）、充值余额（仅可消费）、可提现（分红与退款）、冻结中；按类型筛选的资金明细与钱包规则。</p></figcaption></figure>
+  <figure class=""><a href="mcn-admin-wallet.png" target="_blank" rel="noopener"><img src="mcn-admin-wallet.png" alt="后台 · 钱包与推广日结" loading="lazy"></a><figcaption><h2>后台 · 钱包与推广日结</h2><p>每日 00:00 推广分红日结（执行 / 补跑、记录），提现审核与模拟出款，充值订单、用户余额、钱包设置（汇率、限额、手续费）与资金流水。</p></figcaption></figure>
+  <figure class=""><a href="mcn-pc-deposit.png" target="_blank" rel="noopener"><img src="mcn-pc-deposit.png" alt="PC · 保证金与退出核验" loading="lazy"></a><figcaption><h2>PC · 保证金与退出核验</h2><p>保证金余额、可用、冻结与退还占用；结果未知的缴纳单只能查询原请求；退出前逐项核验未完结业务。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-guild-375.png" target="_blank" rel="noopener"><img src="mcn-h5-guild-375.png" alt="H5 375 · 公会管理概览" loading="lazy"></a><figcaption><h2>H5 375 · 公会管理概览</h2><p>手机端公会概览：公会主视觉、管理页签、关键指标与待处理事项。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-todo-375.png" target="_blank" rel="noopener"><img src="mcn-h5-todo-375.png" alt="H5 375 · 消息待办" loading="lazy"></a><figcaption><h2>H5 375 · 消息待办</h2><p>受邀会员在消息中心“待你处理”直接接受或拒绝公会招募；底部消息与我的显示待办角标。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-promotion-375.png" target="_blank" rel="noopener"><img src="mcn-h5-promotion-375.png" alt="H5 375 · 会员推广" loading="lazy"></a><figcaption><h2>H5 375 · 会员推广</h2><p>手机端邀请有礼：推广等级（按有效会员数）、待结算与已入账分红、邀请码与二维码。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-wallet-375.png" target="_blank" rel="noopener"><img src="mcn-h5-wallet-375.png" alt="H5 375 · 我的钱包" loading="lazy"></a><figcaption><h2>H5 375 · 我的钱包</h2><p>手机端余额卡与资金明细（充值、余额支付消费等）。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-pay-375.png" target="_blank" rel="noopener"><img src="mcn-h5-pay-375.png" alt="H5 375 · 余额支付" loading="lazy"></a><figcaption><h2>H5 375 · 余额支付</h2><p>支付页显示本单 USDT 金额与可用余额，一键余额支付；余额不足时引导充值并可返回继续支付。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-recharge-375.png" target="_blank" rel="noopener"><img src="mcn-h5-recharge-375.png" alt="H5 375 · 充值" loading="lazy"></a><figcaption><h2>H5 375 · 充值</h2><p>USDT 充值订单：演示地址与二维码，模拟到账成功 / 失败 / 结果未知（未知只能查询原请求）。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-invite-375.png" target="_blank" rel="noopener"><img src="mcn-h5-invite-375.png" alt="H5 375 · 邀请落地页（游客）" loading="lazy"></a><figcaption><h2>H5 375 · 邀请落地页（游客）</h2><p>好友打开邀请链接看到邀请人、平台保障与“接受邀请，免费注册”。注册页自动带入邀请码。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-help-375.png" target="_blank" rel="noopener"><img src="mcn-h5-help-375.png" alt="H5 375 · 业务 / 字段说明" loading="lazy"></a><figcaption><h2>H5 375 · 业务 / 字段说明</h2><p>标题栏“?”打开当前页面说明，以底部抽屉显示在手机内，可滚动、Esc 关闭。</p></figcaption></figure>
+  <figure class="phone"><a href="mcn-h5-help-320.png" target="_blank" rel="noopener"><img src="mcn-h5-help-320.png" alt="H5 320 · 窄屏说明" loading="lazy"></a><figcaption><h2>H5 320 · 窄屏说明</h2><p>320px 窄屏下说明抽屉与页面均无横向溢出。</p></figcaption></figure>
+  <figure class=""><a href="mcn-admin-guilds.png" target="_blank" rel="noopener"><img src="mcn-admin-guilds.png" alt="后台 · 公会与签约" loading="lazy"></a><figcaption><h2>后台 · 公会与签约</h2><p>机构审核与经营状态、签约与离会、平台解除签约、会员直接招募与原入驻联动。</p></figcaption></figure>
+  <figure class=""><a href="mcn-admin-rules.png" target="_blank" rel="noopener"><img src="mcn-admin-rules.png" alt="后台 · 公会与推广规则" loading="lazy"></a><figcaption><h2>后台 · 公会与推广规则</h2><p>公会准入与经营参数；会员推广：有效推广充值门槛（USDT）、计入分红的消费口径、推广关系有效期；推广等级按有效会员数与消费分红比例编辑。</p></figcaption></figure>
+  <figure class=""><a href="mcn-admin-report.png" target="_blank" rel="noopener"><img src="mcn-admin-report.png" alt="后台 · 公会与推广报表" loading="lazy"></a><figcaption><h2>后台 · 公会与推广报表</h2><p>按站点与日期统计本地实际事件：签约、推广注册、有效会员、商业分红与调整记录。</p></figcaption></figure>
+  <figure class=""><a href="mcn-admin-help.png" target="_blank" rel="noopener"><img src="mcn-admin-help.png" alt="后台 · 业务 / 字段说明" loading="lazy"></a><figcaption><h2>后台 · 业务 / 字段说明</h2><p>后台每个页面右上角的说明弹窗：用途、角色、步骤、字段与关联模块。</p></figcaption></figure>
+  <figure class=""><a href="mcn-owner-scope.png" target="_blank" rel="noopener"><img src="mcn-owner-scope.png" alt="站长 · 本站公会范围" loading="lazy"></a><figcaption><h2>站长 · 本站公会范围</h2><p>站长只读本人分站的公会与签约，没有审核、解除、保证金或规则修改操作。</p></figcaption></figure>
+  <figure class=""><a href="fx-admin-rates.png" target="_blank" rel="noopener"><img src="fx-admin-rates.png" alt="币种与汇率（运营后台）" loading="lazy"></a><figcaption><h2>币种与汇率（运营后台）</h2><p>首期只启用 USDT（定价与结算，不需要换算）；其他币种已预留：汇率每天自动获取一次并保存版本，可配置数据源与获取时间；获取失败时保留上一版本、在工作台提醒并手动录入（截图中 PHP 为人工录入）；获取记录与配置记录可追溯。</p></figcaption></figure>
+  </div>
+  <footer>未验证：真实移动设备触摸、Safari / Firefox、file 协议、真实链上充值 / 提现、真实图片存储、跨设备邀请与生产系统。</footer>
+</main>
+</body>
+</html>

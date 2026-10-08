@@ -1,0 +1,56 @@
+/* ===== USDT 余额钱包与推广分红 ===== */
+#feRoot.v23 .wp-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.6fr) auto;gap:22px;align-items:center;padding:24px 26px;border-radius:24px;color:#fff;background:radial-gradient(420px 240px at 95% -20%,#2ee6a866,transparent 70%),linear-gradient(130deg,#0f2a3d,#14556b 55%,#0f8a7a);margin:0 0 16px}
+#feRoot.v23 .wp-card small{display:block;font-size:12.5px;color:#ffffffb3}
+#feRoot.v23 .wp-card-main b{display:block;font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1.15;margin:2px 0}
+#feRoot.v23 .wp-card-main span{font-size:12.5px;color:#ffffffa6}
+#feRoot.v23 .wp-card-split{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+#feRoot.v23 .wp-card-split>div{padding:12px 14px;border-radius:14px;background:#ffffff14;border:1px solid #ffffff1f}
+#feRoot.v23 .wp-card-split b{display:block;font-size:19px;font-weight:800}
+#feRoot.v23 .wp-card-split em{display:block;font-style:normal;font-size:11px;color:#ffffff99}
+#feRoot.v23 .wp-card-actions{display:flex;flex-direction:column;gap:8px}
+#feRoot.v23 .wp-card-actions .fe-btn{min-width:110px}
+#feRoot.v23 .wp-plus{color:#0f8a4f}
+#feRoot.v23 .wp-minus{color:var(--ink)}
+#feRoot.v23 .wp-card .wp-minus{color:#ffd1d1}
+#feRoot.v23 .v23-tile.wp-in{background:#e7f8ef;color:#0f8a4f}
+#feRoot.v23 .v23-tile.wp-out{background:#f1f0f6;color:var(--ink2)}
+#feRoot.v23 .wp-tabs{display:flex;flex-wrap:wrap;margin:0 0 8px}
+#feRoot.v23 .wp-tabs button{flex:none;padding:0 12px}
+#feRoot.v23 .wp-quick{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+#feRoot.v23 .wp-quick label{cursor:pointer}
+#feRoot.v23 .wp-quick input{position:absolute;opacity:0;pointer-events:none}
+#feRoot.v23 .wp-quick span{display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:12px;border:1px solid var(--line);background:#fff;font-weight:700;font-size:14px}
+#feRoot.v23 .wp-quick input:checked+span{border-color:var(--p);background:var(--p-50);color:var(--p-700)}
+#feRoot.v23 .wp-deposit{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:center;padding:22px 24px;border-radius:22px;background:#fff;border:1px solid var(--line);margin:0 0 16px}
+#feRoot.v23 .wp-deposit>div>small{font-size:12.5px;color:var(--muted)}
+#feRoot.v23 .wp-deposit>div>b{display:block;font-size:28px;font-weight:800;margin:2px 0 8px}
+#feRoot.v23 .wp-deposit .fe-wrap{margin:10px 0}
+#feRoot.v23 .wp-paybox{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 16px;margin:14px 0 6px;border-radius:16px;background:linear-gradient(120deg,#e9fbf3,#f3fbff);border:1px solid #c9efdf}
+#feRoot.v23 .wp-paybox b{display:block;font-size:15px}
+#feRoot.v23 .wp-paybox small{display:block;font-size:12.5px;color:var(--muted)}
+#feRoot.v23 .wp-paynote{margin:0 0 10px}
+#feRoot.v23 .wp-mine{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#feRoot.v23 .wp-mine-main{display:flex;align-items:center;gap:12px;border:0;background:none;padding:0;text-align:left;min-width:0}
+#feRoot.v23 .wp-mine-main small{display:block;font-size:12px;color:var(--muted)}
+#feRoot.v23 .wp-mine-main b{display:block;font-size:22px;font-weight:800;color:var(--ink)}
+#feRoot.v23 .wp-mine-main b em{font-style:normal;font-size:13px;color:var(--muted);font-weight:600}
+#feModebar .v23-mb-tools>button.v23-mb-run{border-color:#2ee6a855;color:#b8f5dc}
+#feRoot.v23-h5 .wp-card{grid-template-columns:1fr;gap:14px;padding:20px 18px;border-radius:20px}
+#feRoot.v23-h5 .wp-card-main b{font-size:28px}
+#feRoot.v23-h5 .wp-card-split{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#feRoot.v23-h5 .wp-card-split>div{padding:9px 8px}
+#feRoot.v23-h5 .wp-card-split b{font-size:15px}
+#feRoot.v23-h5 .wp-card-actions{flex-direction:row}
+#feRoot.v23-h5 .wp-card-actions .fe-btn{flex:1;min-width:0}
+#feRoot.v23-h5 .wp-deposit{grid-template-columns:1fr;padding:18px}
+#feRoot.v23-h5 .wp-deposit .mcnx-qr{justify-self:center}
+#feRoot.v23-h5 .wp-tabs{flex-wrap:nowrap;overflow-x:auto}
+@media(max-width:1000px){#feRoot.v23 .wp-card{grid-template-columns:1fr}#feRoot.v23 .wp-card-actions{flex-direction:row}}
+@media(max-width:1366px){#feModebar .v23-mb-clock{display:none}}
+@media(max-width:760px){#feModebar .v23-mb-run{display:none}}
+#feRoot.v23 .wp-entry .v23-member-main{flex:1;min-width:0}
+#feRoot.v23 .wp-entry .v23-member-main small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#feRoot.v23 .wp-entry .mcnx-num{min-width:0;flex:none}
+#feRoot.v23-h5 .wp-entry .mcnx-num small{display:none}
+#feRoot.v23 .v23-two>*{min-width:0}
+#feRoot.v23 .wp-tabs{max-width:100%}

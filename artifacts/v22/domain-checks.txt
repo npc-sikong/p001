@@ -1,0 +1,33 @@
+{"users":27,"providers":11,"site":"ST-001","admins":[["BA-ADMIN","admin"],["BA-SO-001","owner_SO-001"],["BA-SO-002","owner_SO-002"]],"products":[["PRD22-GAME-PRD-FE-GAME-A-单次","CAT-GAME",112],["PRD22-GAME-PRD-FE-GAME-A-按天","CAT-GAME",132],["PRD22-GAME-PRD-FE-GAME-A-按周","CAT-GAME",672]]}
+PASS 增量初始化保持旧订单与用户，重复初始化不重复种子
+PASS 普通用户与到期VIP不能发起新增社交
+PASS 咨询复用、双方消息、服务卡与跨账号保护
+PASS 服务者也需要VIP回复；到期可以读取和结束
+PASS 拉黑阻止咨询匹配，解除恢复；取消关注不要求VIP
+PASS 跨分站咨询、房间拒绝
+PASS 匹配搜索与本人响应，重复选定保持同一对象
+PASS 候选失效、无结果与超时路径
+PASS 房间加入幂等、房主权限和麦位申请
+PASS 8人4麦上限与VIP到期只读、退出
+PASS 声音审核退回、重提、通过与保留原版本
+PASS 后台活动发布下架、通知失败重试与去重
+PASS 站长本站只读、不得审核关闭房间，跨站数据不可见
+PASS 后台撤销会话保留账号，不能继续管理
+PASS 举报复用原案件集合、第三人不能查询私聊证据
+PASS 事件对象幂等与真实来源、旧资金数据保持
+DOMAIN TOTAL 16
+PASS 新增前台与后台页面可生成
+PASS 原预约付款、重复回执拒绝、已付订单不受VIP限制
+FINAL TOTAL 18
+PASS 存储容量失败回滚本次操作，保留旧数据
+PASS 后台推荐不替用户选定，关闭房间禁止继续互动
+PASS 匹配重复提交原预约只生成一笔待付款，冲突不可购买
+PASS 漏斗使用顺序用户分母，重复回执不重复统计
+PASS V22举报受理关联正确责任主体
+VERIFIED TOTAL 23
+PASS 房间VIP失效可下麦收尾，不能新增互动
+ALL CHECKS 24
+PASS 普通用户直接购买服务仍可用，认证过期拒绝新增购买
+DELIVERY CHECKS 25
+PASS 原实物与订阅页面可用，不附加错位预约按钮
+FINAL DELIVERY 26

@@ -1,0 +1,13 @@
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+*.zip
+*.zip.tmp
+__pycache__/
+*.py[cod]
+node_modules/
+.work/tmp/
+.work/cache/
+artifacts/deploy/
