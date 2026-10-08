@@ -1,0 +1,32 @@
+[
+  {
+    "page": "公会与招募",
+    "heading": "公会与签约",
+    "hasHelp": true,
+    "hasError": false
+  },
+  {
+    "page": "会员推广",
+    "heading": "会员推广与归因",
+    "hasHelp": true,
+    "hasError": false
+  },
+  {
+    "page": "保证金保障",
+    "heading": "保证金与服务保障",
+    "hasHelp": true,
+    "hasError": false
+  },
+  {
+    "page": "商业结算",
+    "heading": "公会与推广结算",
+    "hasHelp": true,
+    "hasError": false
+  },
+  {
+    "page": "经营报表",
+    "heading": "公会与推广报表",
+    "hasHelp": true,
+    "hasError": false
+  }
+]
