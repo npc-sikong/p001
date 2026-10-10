@@ -975,11 +975,10 @@ body.fe-active{background:#f6f6fb}
 #feRoot.v23-h5 .v23-sec{margin-top:22px}
 #feRoot.v23-h5 .v23-sec-head{margin-bottom:10px;align-items:center}
 #feRoot.v23-h5 .v23-sec-head h2{font-size:18px}
-#feRoot.v23-h5 .v23-live-scroll{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px 4px}
-#feRoot.v23-h5 .v23-live-scroll::-webkit-scrollbar{display:none}
-#feRoot.v23-h5 .v23-live-scroll button{flex:none;width:84px;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 4px 10px;border:1px solid var(--line);border-radius:18px;background:#fff}
+#feRoot.v23-h5 .v23-live-scroll{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:0;padding:0 0 4px}
+#feRoot.v23-h5 .v23-live-scroll button{min-width:0;width:100%;display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 4px 10px;border:1px solid var(--line);border-radius:18px;background:#fff}
 #feRoot.v23-h5 .v23-live-scroll .fe-avatar{width:52px;height:52px}
-#feRoot.v23-h5 .v23-live-scroll b{font-size:13px;max-width:76px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#feRoot.v23-h5 .v23-live-scroll b{font-size:13px;max-width:100%;line-height:1.35;white-space:normal;overflow-wrap:anywhere;text-align:center}
 #feRoot.v23-h5 .v23-live-scroll small{font-size:11px;color:var(--muted)}
 #feRoot.v23-h5 .v23-topics{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:0 14px 2px;gap:8px}
 #feRoot.v23-h5 .v23-topics::-webkit-scrollbar{display:none}
