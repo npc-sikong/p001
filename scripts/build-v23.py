@@ -52,6 +52,20 @@ assert old_photo_count == 1, ('legacy portrait atlas changed', old_photo_count)
 base, media_photo_count = re.subn(r'<img class="c21-media( c21-backend-media)?" src="\$\{e\(c21Asset\(m\)\)\}" alt="[^"\n]*">', lambda m: '${fashionMediaPhoto(m,' + repr('c21-backend-media' if m.group(1) else '') + ')}', base)
 assert media_photo_count == 3, ('subscription photo renderers changed', media_photo_count)
 base = base.replace('<span class="avatar" style="width:52px;height:52px;font-size:22px">${e(u.name[0])}</span>', '${fashionAdminPortrait(u.id,52)}')
+# Registration persists the optional field before the existing auth/attribution flow saves.
+gender_register_old = "avatar:'默认头像（演示）',gender:'未填写',birthYear:'未采集',remark:'仅离线演示；18+ 为自我确认，非真实认证'"
+assert base.count(gender_register_old) == 1, 'registration gender field changed'
+base = base.replace(gender_register_old, gender_register_old.replace("gender:'未填写'", "gender:genderValue(fd.get('gender')),genderProfileVersion:1"))
+for old, new in [
+    ("['服务者 / 站点','状态','技能 / 话题','展示管理']", "['服务者 / 站点','性别','状态','技能 / 话题','展示管理']"),
+    ("e(providerName(m.provider))+'<br>'+e(siteLabel(m.stationId)),e(m.online", "e(providerName(m.provider))+'<br>'+e(siteLabel(m.stationId)),genderBadge(m.provider),e(m.online"),
+    ("<p>${e(siteLabel(m.stationId))} · ${e(m.topics)}", "<p>${genderBadge(m.provider)} ${e(siteLabel(m.stationId))} · ${e(m.topics)}"),
+    ("<p>处理原因：${e(m.reason||'等待当前步骤完成')}</p>", "<p>服务者性别条件：${e(m.gender||'不限')}</p><p>处理原因：${e(m.reason||'等待当前步骤完成')}</p>"),
+    ("providerName(c.provider)+' '+c.status", "providerName(c.provider)+'（'+genderOf(c.provider)+'） '+c.status"),
+    ("v22MatchCandidates(m).map(p=>[p.id,p.name])", "v22MatchCandidates(m).map(p=>[p.id,p.name+' · '+genderOf(p)])")
+]:
+    assert base.count(old) == 1, ('gender related renderer changed', old[:60], base.count(old))
+    base = base.replace(old, new)
 css = (root / '.work/v23.css').read_text()
 js = (root / '.work/v23.js').read_text()
 extension_css = (root / '.work/mcn-promotion.css').read_text() if (root / '.work/mcn-promotion.css').exists() else ''
@@ -68,6 +82,8 @@ portrait_path = root / 'assets/portraits/fashion-cast-atlas-20261010.png'
 portrait_bytes = portrait_path.read_bytes()
 portrait_css = (root / '.work/fashion-portraits.css').read_text()
 portrait_js = (root / '.work/fashion-portraits.js').read_text()
+gender_css = (root / '.work/gender.css').read_text()
+gender_js = (root / '.work/gender.js').read_text()
 assert portrait_css.count('__FASHION_ATLAS_DATA__') == 1
 portrait_css = portrait_css.replace('__FASHION_ATLAS_DATA__', 'data:image/png;base64,' + base64.b64encode(portrait_bytes).decode('ascii'))
 
@@ -109,7 +125,8 @@ s = head + '<style id="v23-style">\n/* V23 STYLE START */\n' + css + '\n/* V23 S
 
 assert s.count('/* V22 END */\nboot();') == 1
 s = s.replace('/* V22 END */\nboot();', '/* V22 END */\n/* V23 START */\n' + js + '\n/* V23 END */\n/* MCN AND PROMOTION START */\n' + extension_js + '\n/* MCN AND PROMOTION END */\n/* MCN BUSINESS START */\n' + business_js + '\n/* MCN BUSINESS END */\n/* WALLET PROMOTION START */\n' + wallet_js + '\n/* WALLET PROMOTION END */\n/* SERVICE CYCLE START */\n' + service_js + '\n/* SERVICE CYCLE END */\n/* CURRENCY START */\n' + currency_js + '\n/* CURRENCY END */\n/* FASHION PORTRAITS START */\n' + portrait_js + '\n/* FASHION PORTRAITS END */\nboot();')
-s = s.replace('</head>', '<style id="mcn-promotion-style">\n' + extension_css + '\n</style><style id="mcn-business-style">\n' + business_css + '\n</style><style id="wallet-promotion-style">\n' + wallet_css + '\n</style><style id="service-cycle-style">\n' + service_css + '\n</style><style id="fashion-portraits-style">\n' + portrait_css + '\n</style></head>', 1)
+s = s.replace('/* FASHION PORTRAITS END */\nboot();', '/* FASHION PORTRAITS END */\n/* GENDER START */\n' + gender_js + '\n/* GENDER END */\nboot();')
+s = s.replace('</head>', '<style id="mcn-promotion-style">\n' + extension_css + '\n</style><style id="mcn-business-style">\n' + business_css + '\n</style><style id="wallet-promotion-style">\n' + wallet_css + '\n</style><style id="service-cycle-style">\n' + service_css + '\n</style><style id="fashion-portraits-style">\n' + portrait_css + '\n</style><style id="gender-style">\n' + gender_css + '\n</style></head>', 1)
 s = s.replace('<title>产品完善版 · 陪伴服务平台｜总站 / PC / H5 · 第二十二版</title>', '<title>伴屿 · 陪伴服务平台｜运营后台 / PC / H5 · 第二十三版</title>')
 
 s = s.replace('陪伴服务平台｜总站 / PC / H5 · 第二十二版', '陪伴服务平台｜总站 / PC / H5 · 第二十三版')
@@ -127,6 +144,7 @@ shutil.copytree(root / 'assets/portraits', root / 'dist/assets/portraits', dirs_
 (root / 'dist/.nojekyll').write_text('', encoding='utf-8')
 (root / 'dist/build-info.json').write_text(json.dumps({
     'version': 'V23', 'prototypeOnly': True,
+    'genderProfileVersion': 1,
     'indexBytes': src.stat().st_size,
     'indexSha256': hashlib.sha256(src.read_bytes()).hexdigest(),
     'portraits': {'count': 16, 'grid': [4, 4], 'width': 1254, 'height': 1254,

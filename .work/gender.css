@@ -1,0 +1,11 @@
+.gender-badge{display:inline-flex;align-items:center;white-space:nowrap;font-size:11px;line-height:1.6;color:#736682;background:#f4eef9;border:1px solid #e9def4;border-radius:6px;padding:1px 6px;margin:2px 0;font-weight:500}
+.gender-query{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:12px 14px;margin:12px 0;background:#faf7fd;border:1px solid #eadff4;border-radius:12px}
+.gender-query label,.gender-admin-select{display:flex;align-items:center;gap:7px;font-size:12px;color:#72677e}
+.gender-query select,.gender-admin-select select{min-width:110px;max-width:100%;background:white;border:1px solid #dfd6e7;border-radius:8px;padding:7px 10px;color:#3e344d}
+.gender-query small{font-size:11px;color:#93869e}
+.gender-condition{font-size:12px;background:#faf5ff;color:#826599;border-radius:8px;padding:10px 12px;margin:0 0 14px}
+#feRoot .gender-query .btn{border-radius:8px;padding:7px 10px}
+#feRoot .mcnx-member .gender-badge{margin-left:6px}
+#feRoot .gender-summary{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:10px 0}
+@media(max-width:600px){.gender-query{gap:8px;padding:10px}.gender-query label{flex:1;min-width:180px;justify-content:space-between}.gender-query small{width:100%}#feRoot .gender-query select{flex:1;max-width:150px}#feRoot .mcnx-member .gender-badge{margin-left:0}}
+@media(max-width:400px){#feRoot.v23-h5 .v23-toolbar{flex-wrap:wrap}#feRoot.v23-h5 .v23-toolbar-right{margin-left:auto}}

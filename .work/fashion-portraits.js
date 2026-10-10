@@ -14,7 +14,8 @@ function fashionPerson(id){
 }
 function fashionPortraitIndex(id){
  const {key,user}=fashionPerson(id);
- if(Object.hasOwn(FASHION_SEEDED_PORTRAITS,key))return FASHION_SEEDED_PORTRAITS[key];
+ const preset=FASHION_SEEDED_PORTRAITS[key],declared=String(user?.gender||'');
+ if(preset!==undefined&&(declared!=='男'&&declared!=='女'||(declared==='女')===[0,1,2,3,8,9,10,11].includes(preset)))return preset;
  const hash=[...key].reduce((n,c)=>(n*31+c.charCodeAt(0))>>>0,0),gender=String(user?.gender||'');
  const choices=gender==='女'?[0,1,2,3,8,9,10,11]:gender==='男'?[4,5,6,7,12,13,14,15]:Array.from({length:16},(_,i)=>i);
  return choices[hash%choices.length];

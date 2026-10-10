@@ -12,3 +12,4 @@ node_modules/
 .work/cache/
 artifacts/deploy/
 artifacts/fashion/local-server.log
+/artifacts/gender/*.log
