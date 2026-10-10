@@ -1819,8 +1819,27 @@ body.fe-active{background:#f6f6fb}
 .fe-avatar .fashion-photo .fashion-cell,
 #feRoot.v23 .fe-avatar .fashion-photo .fashion-cell,
 .fashion-admin-avatar .fashion-photo .fashion-cell{
- transform:translateX(-50%) scale(1.52);transform-origin:50% 20%;
+ left:var(--fashion-avatar-x,50%);top:var(--fashion-avatar-top,7%);
+ transform:translateX(-50%) scale(var(--fashion-avatar-scale,1.28));transform-origin:50% 0%;
 }
+/* Each cutout has its own head position; retain the hairline and chin in avatars.
+   These variables only affect avatar crops, not the original service photos. */
+.fashion-photo[data-fashion-person="0"]{--fashion-avatar-scale:1.20;--fashion-avatar-x:44%;--fashion-avatar-top:6%}
+.fashion-photo[data-fashion-person="1"]{--fashion-avatar-scale:1.16;--fashion-avatar-x:50%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="2"]{--fashion-avatar-scale:1.22;--fashion-avatar-x:47%;--fashion-avatar-top:6%}
+.fashion-photo[data-fashion-person="3"]{--fashion-avatar-scale:1.20;--fashion-avatar-x:53%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="4"]{--fashion-avatar-scale:1.38;--fashion-avatar-x:41%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="5"]{--fashion-avatar-scale:1.32;--fashion-avatar-x:49%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="6"]{--fashion-avatar-scale:1.38;--fashion-avatar-x:47%;--fashion-avatar-top:8%}
+.fashion-photo[data-fashion-person="7"]{--fashion-avatar-scale:1.36;--fashion-avatar-x:57%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="8"]{--fashion-avatar-scale:1.22;--fashion-avatar-x:47%;--fashion-avatar-top:6%}
+.fashion-photo[data-fashion-person="9"]{--fashion-avatar-scale:1.24;--fashion-avatar-x:52%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="10"]{--fashion-avatar-scale:1.24;--fashion-avatar-x:47%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="11"]{--fashion-avatar-scale:1.24;--fashion-avatar-x:43%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="12"]{--fashion-avatar-scale:1.32;--fashion-avatar-x:50%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="13"]{--fashion-avatar-scale:1.32;--fashion-avatar-x:56%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="14"]{--fashion-avatar-scale:1.40;--fashion-avatar-x:47%;--fashion-avatar-top:7%}
+.fashion-photo[data-fashion-person="15"]{--fashion-avatar-scale:1.32;--fashion-avatar-x:49%;--fashion-avatar-top:7%}
 .fashion-admin-avatar{display:inline-block;position:relative;overflow:hidden;flex:none;vertical-align:middle;border-radius:10px;background:#ede8f5}
 .fashion-album,#feRoot.v23 .c21-media.fashion-album{position:relative;aspect-ratio:16/10;overflow:hidden;max-height:340px;background:#eee8f1}
 .fashion-album .fashion-cell{width:62.5%;top:50%;transform:translate(-50%,-50%) scale(1.025);transform-origin:50% 50%}
