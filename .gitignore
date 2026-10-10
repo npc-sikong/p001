@@ -11,3 +11,4 @@ node_modules/
 .work/tmp/
 .work/cache/
 artifacts/deploy/
+artifacts/fashion/local-server.log

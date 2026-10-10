@@ -1,0 +1,22 @@
+/* One transparent 4 x 4 atlas; CSS clipping preserves the generated PNG alpha. */
+.fashion-photo,#feRoot.v23 .fe-photo.fashion-photo{
+ position:absolute;inset:0;display:block;overflow:hidden;border-radius:inherit;
+ background:radial-gradient(ellipse at 50% 18%,#ffffffb3,transparent 75%),var(--fashion-tone,#e9e5ef);
+ isolation:isolate;
+}
+.fashion-cell{
+ position:absolute;display:block;left:50%;top:0;width:100%;aspect-ratio:1;
+ background-image:url("__FASHION_ATLAS_DATA__");background-size:400% 400%;
+ background-position:var(--fashion-x) var(--fashion-y);background-repeat:no-repeat;
+ transform:translateX(-50%) scale(1.025);transform-origin:50% 0%;
+}
+.fe-avatar .fashion-photo .fashion-cell,
+#feRoot.v23 .fe-avatar .fashion-photo .fashion-cell,
+.fashion-admin-avatar .fashion-photo .fashion-cell{
+ transform:translateX(-50%) scale(1.52);transform-origin:50% 20%;
+}
+.fashion-admin-avatar{display:inline-block;position:relative;overflow:hidden;flex:none;vertical-align:middle;border-radius:10px;background:#ede8f5}
+.fashion-album,#feRoot.v23 .c21-media.fashion-album{position:relative;aspect-ratio:16/10;overflow:hidden;max-height:340px;background:#eee8f1}
+.fashion-album .fashion-cell{width:62.5%;top:50%;transform:translate(-50%,-50%) scale(1.025);transform-origin:50% 50%}
+#feRoot.v23 .v23-card-media .fashion-photo{border-radius:0}
+@media(max-width:650px){#feRoot.v23 .c21-media.fashion-album{max-height:260px}}

@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-10",
+  "prototypeOnly": true,
+  "generation": {
+    "method": "built-in imagegen",
+    "briefAge": 18,
+    "adultsOnly": true,
+    "styles": [
+      "Korean pop fashion",
+      "Japanese Tokyo streetwear"
+    ],
+    "count": 16,
+    "grid": [
+      4,
+      4
+    ],
+    "asset": "assets/portraits/fashion-cast-atlas-20261010.png",
+    "prompt": "assets/portraits/fashion-cast-prompt.txt",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "zeroAlphaPixels": 589978,
+    "highOpacityPixels": 864206,
+    "sha256": "4be58af717f1e3f45d47a6db596ea56df2d0d4d62f536dd88fddd5108bd5beea"
+  },
+  "checks": {
+    "sourceEqualsDist": true,
+    "assetEqualsDist": true,
+    "scriptSyntax": "passed",
+    "existingBusinessChecks": {
+      "v22": 26,
+      "mcn": 46,
+      "service": 11,
+      "intl": 8,
+      "total": 91
+    },
+    "browser": {
+      "PC": [
+        1280,
+        900
+      ],
+      "H5": [
+        375,
+        812
+      ],
+      "narrowH5": [
+        320,
+        812
+      ],
+      "horizontalOverflow": false,
+      "errors": 0,
+      "providerPortrait": "4",
+      "backendUserPortrait": "4",
+      "publicSubscriptionPhoto": "4",
+      "lockedExclusiveItems": 2,
+      "screenshots": [
+        "pc-discover.png",
+        "pc-provider.png",
+        "pc-subscription.png",
+        "h5-discover.png",
+        "h5-provider.png",
+        "h5-provider-320.png",
+        "admin-users.png",
+        "admin-user-detail.png"
+      ]
+    }
+  },
+  "indexSha256": "d3fc50633bcafb1ae06ce230f4ab384dc58833ce54492d7b3f7ff7f05f561c96",
+  "limits": [
+    "仅本地原型验收；不代表真实后端或支付能力",
+    "照片为合成虚构人物；不是对真实人员年龄的核验",
+    "未进行真实手机、Safari或Firefox验收"
+  ]
+}
