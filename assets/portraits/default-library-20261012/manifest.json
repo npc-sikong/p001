@@ -1,0 +1,172 @@
+{
+  "source": "five user-provided PNG attachments",
+  "count": 200,
+  "rendering": "CSS clipping with individually measured row boundaries; original pixels and alpha preserved",
+  "sheets": [
+    {
+      "sheet": 1,
+      "asset": "sheet-01.png",
+      "columns": 8,
+      "rows": 5,
+      "count": 40,
+      "width": 1586,
+      "height": 992,
+      "transparent": true,
+      "sha256": "e4e6751ee5c48f3caee759737c28254cd3acb6147933465892d0e35932e28680",
+      "rowCropBounds": [
+        [
+          0,
+          206
+        ],
+        [
+          209,
+          411
+        ],
+        [
+          412,
+          609
+        ],
+        [
+          610,
+          815
+        ],
+        [
+          818,
+          992
+        ]
+      ]
+    },
+    {
+      "sheet": 2,
+      "asset": "sheet-02.png",
+      "columns": 8,
+      "rows": 5,
+      "count": 40,
+      "width": 1586,
+      "height": 992,
+      "transparent": true,
+      "sha256": "0c267f0ebe1dea777b52f534c375ba1088fcbddd2a9b5152adb221f4c9be1377",
+      "rowCropBounds": [
+        [
+          0,
+          195
+        ],
+        [
+          198,
+          393
+        ],
+        [
+          394,
+          591
+        ],
+        [
+          593,
+          789
+        ],
+        [
+          790,
+          992
+        ]
+      ]
+    },
+    {
+      "sheet": 3,
+      "asset": "sheet-03.png",
+      "columns": 8,
+      "rows": 5,
+      "count": 40,
+      "width": 1586,
+      "height": 992,
+      "transparent": true,
+      "sha256": "f3b0577f8ed7bc669ec857eea7b2b08e8e933a4db2390e00255992f79df40225",
+      "rowCropBounds": [
+        [
+          0,
+          193
+        ],
+        [
+          197,
+          393
+        ],
+        [
+          394,
+          592
+        ],
+        [
+          593,
+          791
+        ],
+        [
+          793,
+          992
+        ]
+      ]
+    },
+    {
+      "sheet": 4,
+      "asset": "sheet-04.png",
+      "columns": 8,
+      "rows": 5,
+      "count": 40,
+      "width": 1586,
+      "height": 992,
+      "transparent": true,
+      "sha256": "df85e8b4a711f5f54f807d3081d41706b88bf226743991206e5eb50a616d447b",
+      "rowCropBounds": [
+        [
+          0,
+          198
+        ],
+        [
+          200,
+          397
+        ],
+        [
+          399,
+          595
+        ],
+        [
+          597,
+          794
+        ],
+        [
+          795,
+          992
+        ]
+      ]
+    },
+    {
+      "sheet": 5,
+      "asset": "sheet-05.png",
+      "columns": 8,
+      "rows": 5,
+      "count": 40,
+      "width": 1586,
+      "height": 992,
+      "transparent": true,
+      "sha256": "9d7e1f961ae453a19f30c8e63d0067dffb6348b44999e5bd5d4615f10d2bcc97",
+      "rowCropBounds": [
+        [
+          0,
+          196
+        ],
+        [
+          197,
+          395
+        ],
+        [
+          397,
+          593
+        ],
+        [
+          595,
+          791
+        ],
+        [
+          793,
+          992
+        ]
+      ]
+    }
+  ]
+}

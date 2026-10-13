@@ -45,4 +45,4 @@ PASS 提现只能使用可提现余额，冻结后审核出款，未知只查询
 PASS 钱包设置仅总站可改，汇率换算生效，站长看不到钱包后台
 PASS 钱包、充值、提现、推广与后台日结页面均可生成
 MCN DELIVERY CHECKS 46
-EXPLANATION ENTRIES frontend=68 admin=139
+EXPLANATION ENTRIES frontend=73 admin=142
