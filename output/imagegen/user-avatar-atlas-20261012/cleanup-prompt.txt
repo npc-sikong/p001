@@ -1,0 +1,7 @@
+Use case: background-extraction
+Asset type: final transparent PNG user avatar atlas.
+Input image 1: EDIT TARGET, the forty-person portrait atlas.
+Primary request: clean ONLY the cutout boundaries and transparent background of this existing forty-person atlas. Remove all red, blue, yellow, white and other colored fringe pixels, jagged leftover background specks, halos and noise around the hair, shoulders, clothing edges and the gutters. Preserve fine natural hair detail with clean alpha antialiasing.
+Invariants: retain EXACTLY the same 40 fictional adult portraits, 20 women on the left four columns and 20 men on the right four columns, the same 8-column by 5-row grid, faces, facial features, hairstyles, clothing, expressions, portrait scale and positions. Do not add or delete people, do not restyle faces, do not change the layout.
+Background: genuine transparent RGBA, including the margins and every gap between people. No drawn checkerboard and no background color. Natural foreground-colored antialiased edges, with no colored outlines or fringe. No drop shadows, labels, text, frames or watermarks.
+Deliver one transparent PNG with the same layout, at the highest practical resolution.

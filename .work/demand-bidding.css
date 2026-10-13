@@ -1,0 +1,38 @@
+#feRoot .rq-summary{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:20px;background:var(--v23-bg,#f6f7fb);border:1px solid #e9eaf0;border-radius:16px;margin:18px 0}
+#feRoot .rq-summary>div{display:flex;flex-direction:column;gap:6px}
+#feRoot .rq-summary small,.rq-price small{font-size:12px;color:#888894}
+#feRoot .rq-summary strong{font-size:23px;color:#6d56db;line-height:1.35}
+#feRoot .rq-summary>p{grid-column:1/-1;font-size:13px;color:#747480;margin:0}
+#feRoot .rq-applicant{border:1px solid #e8e8f0;border-radius:16px;padding:20px;margin:12px 0;background:#fff}
+#feRoot .rq-applicant-top{display:flex;align-items:center;justify-content:space-between;gap:14px}
+#feRoot .rq-person{display:flex;align-items:center;gap:12px;min-width:0}
+#feRoot .rq-person .fe-avatar{width:48px;height:48px;flex:none}
+#feRoot .rq-price{text-align:right;flex:none;display:flex;flex-direction:column;gap:4px}
+#feRoot .rq-price strong{font-size:24px;line-height:1.2;color:#6d56db}
+#feRoot .rq-funds p{display:flex;justify-content:space-between;gap:14px;line-height:1.6}
+#feRoot .rq-funds p.fe-small{display:block}
+#feRoot .rq-demo{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px;border-radius:16px;background:#f2effc;margin-top:20px}
+#feRoot .rq-demo p{font-size:13px;color:#727181;line-height:1.6;margin:6px 0 0}
+#feRoot .rq-budget-fields{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+#feRoot .rq-budget-fields [hidden]{display:none!important}
+#feRoot .rq-freeze-preview{padding:18px;border-radius:14px;background:#f4f1fc;margin:12px 0 20px}
+#feRoot .rq-freeze-preview small{display:block;color:#787383}
+#feRoot .rq-freeze-preview strong{display:block;font-size:28px;line-height:1.5;color:#6d56db}
+#feRoot .rq-freeze-preview p{font-size:13px;line-height:1.6;margin:5px 0}
+#feRoot .rq-warning{color:#d06840}
+#feRoot .rq-chat{max-width:900px;margin:auto}
+#feRoot .rq-chat-context{padding:16px;background:#f4f2fc;border-radius:12px}
+#feRoot .rq-chat-context p{font-size:13px;color:#777181}
+#feRoot .rq-chat-messages{min-height:180px;padding:20px 0;display:flex;flex-direction:column;gap:15px}
+#feRoot .rq-message{max-width:82%;align-self:flex-start}
+#feRoot .rq-message small{font-size:11px;color:#91909b}
+#feRoot .rq-message p{padding:12px 16px;background:#f3f3f7;border-radius:0 14px 14px;margin:5px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+#feRoot .rq-message.self{align-self:flex-end;text-align:right}
+#feRoot .rq-message.self p{background:#ece7fc;border-radius:14px 0 14px 14px;text-align:left}
+#feRoot.fe-h5 .rq-summary,#feRoot.fe-h5 .rq-budget-fields{grid-template-columns:1fr}
+#feRoot.fe-h5 .rq-applicant{padding:16px}
+#feRoot.fe-h5 .rq-applicant-top{align-items:flex-start;flex-wrap:wrap}
+#feRoot.fe-h5 .rq-price strong{font-size:21px}
+#feRoot.fe-h5 .rq-demo{align-items:flex-start;flex-direction:column}
+#feRoot.fe-h5 .rq-funds p{flex-wrap:wrap}
+@media(max-width:700px){#feRoot .rq-summary,#feRoot .rq-budget-fields{grid-template-columns:1fr}#feRoot .rq-applicant{padding:16px}#feRoot .rq-applicant-top{align-items:flex-start;flex-wrap:wrap}#feRoot .rq-price strong{font-size:21px}#feRoot .rq-demo{align-items:flex-start;flex-direction:column}#feRoot .rq-funds p{flex-wrap:wrap}}

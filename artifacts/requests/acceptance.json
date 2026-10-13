@@ -1,0 +1,50 @@
+{
+  "verifiedAt": "2026-10-10T08:14:46.201685+00:00",
+  "buildSha256": "394d05fd30d62426236fabc21699293c9dcfbdfa5086085309e59748a4743e9a",
+  "buildBytes": 5698837,
+  "httpMatchesDist": true,
+  "prototypeOnly": true,
+  "preview": "http://127.0.0.1:8123/",
+  "scope": [
+    "PC/H5 需求发布预算与结算约定",
+    "申请者报价列表与双方私聊",
+    "同意申请者完成需求贴及差额解冻",
+    "钱包冻结记录、成交订单与后台审核"
+  ],
+  "checks": {
+    "v22": 26,
+    "mcnWallet": 46,
+    "serviceCycle": 11,
+    "intl": 8,
+    "gender": 25,
+    "demandBidding": 15,
+    "total": 131,
+    "allPassed": true
+  },
+  "browserVerified": [
+    "区间 100～300 USDT 的学习需求提交审核时冻结 300 USDT，约定每 2 天结算",
+    "700～1000 USDT 的游戏需求显示三个申请报价 850/900/950 USDT",
+    "发布者与第一位申请者通过各自账号发送并收到私聊消息",
+    "H5 同意 850 USDT 的申请，需求贴已完成，其他申请未选中",
+    "转入 850 USDT 服务订单，原冻结 1000 USDT 的差额 150 USDT 解冻",
+    "订单每 3 天结算：364.26、364.26、121.48 USDT，合计 850 USDT",
+    "后台列表及详情可见预算、结算方式、冻结状态、报价与申请人数",
+    "后台拒绝新的待审核需求后全部 300 USDT 释放",
+    "刷新后申请者、聊天、成交状态与资金记录保留"
+  ],
+  "consoleWarningsOrErrors": [],
+  "evidence": [
+    "publish-range.png",
+    "published-frozen.png",
+    "applicants-pc.png",
+    "applicants-h5.png",
+    "private-chat.png",
+    "completed-pc.png",
+    "completed-h5.png",
+    "completed-preview.png",
+    "admin-frozen.png",
+    "admin-released.png",
+    "admin-applicants.png"
+  ],
+  "limits": "仅当前浏览器的本地交互与虚构资金、聊天、通知；未开发真实 API、认证、支付、结算或生产并发。H5 为浏览器预览，未进行真实手机设备验收。"
+}

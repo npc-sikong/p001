@@ -1,0 +1,69 @@
+/* ---------- Cards: one order-card design for orders / drafts / agent orders, record rows for earnings & commission, H5 tables as stacked cards;
+   user end hides station names; Chinese UI shows places and time zones in Chinese ---------- */
+const UC_TONES=[['amber',/待支付|待确认|待审核|审核中|待处理|需补件|待提交/],['red',/售后|中止|争议|未通过|驳回|失败|异常|冻结/],['green',/已完成|已通过|已到账|已结算|已发布|成功|已确认/],['grey',/已关闭|已取消|已撤回|已失效|已结束/],['blue',/./]];
+function ucTone(s){return (UC_TONES.find(([,re])=>re.test(String(s||'')))||['blue'])[0];}
+function ucPill(s){return `<span class="uc-status uc-${ucTone(s)}">${e(s||'—')}</span>`;}
+function ucDay(d){d=String(d||'');return d.slice(0,4)===String(TODAY).slice(0,4)?d.slice(5):d;}
+function ucRange(a,b){return !a?'':(!b||a===b)?ucDay(a):`${ucDay(a)} 至 ${ucDay(b)}`;}
+const UC_TZ={'UTC':'世界标准时间','Etc/UTC':'世界标准时间','Asia/Shanghai':'北京时间','Asia/Chongqing':'北京时间','Asia/Harbin':'北京时间','Asia/Urumqi':'乌鲁木齐时间','Asia/Hong_Kong':'香港时间','Asia/Macau':'澳门时间','Asia/Taipei':'台北时间','Asia/Manila':'马尼拉时间','Asia/Kuala_Lumpur':'吉隆坡时间','Asia/Singapore':'新加坡时间','Asia/Bangkok':'曼谷时间','Asia/Ho_Chi_Minh':'胡志明市时间','Asia/Saigon':'胡志明市时间','Asia/Jakarta':'雅加达时间','Asia/Tokyo':'东京时间','Asia/Seoul':'首尔时间','Asia/Dubai':'迪拜时间','Europe/London':'伦敦时间','Europe/Paris':'巴黎时间','America/New_York':'纽约时间','America/Los_Angeles':'洛杉矶时间','Australia/Sydney':'悉尼时间'};
+const UC_PLACES=[['Ho Chi Minh City','胡志明市'],['Kuala Lumpur','吉隆坡'],['Quezon City','奎松市'],['Hong Kong','香港'],['New York','纽约'],['Philippines','菲律宾'],['Malaysia','马来西亚'],['Singapore','新加坡'],['Thailand','泰国'],['Vietnam','越南'],['Indonesia','印度尼西亚'],['Japan','日本'],['Korea','韩国'],['Taiwan','台湾'],['Macau','澳门'],['China','中国'],['Manila','马尼拉'],['Cebu','宿务'],['Davao','达沃'],['Makati','马卡蒂'],['Penang','槟城'],['Bangkok','曼谷'],['Hanoi','河内'],['Jakarta','雅加达'],['Tokyo','东京'],['Seoul','首尔'],['Taipei','台北'],['Shanghai','上海'],['Beijing','北京'],['Dubai','迪拜'],['London','伦敦']];
+function ucZh(){try{return feLocaleState().code!=='en-US';}catch{return true;}}
+function ucTzEn(tz){return tz==='UTC'||tz==='Etc/UTC'?'UTC':['Asia/Shanghai','Asia/Chongqing','Asia/Harbin'].includes(tz)?'Beijing time':tz.includes('/')?tz.split('/').pop().replace(/_/g,' ')+' time':tz;}
+function uxTzLabel(tz){tz=String(tz||'UTC');return ucZh()?(UC_TZ[tz]||tz):ucTzEn(tz);}
+function ucAmt(label,v,sub=''){return `<span class="uc-amt"><small>${e(label)}</small><b>${money(v)}</b>${sub?`<em>${e(sub)}</em>`:''}</span>`;}
+
+/* ---------- Order card ---------- */
+function ucPlanChips(o){const chips=[];try{if(o.scPlan){const cs=scCycles(o),done=cs.filter(c=>c.settled).length;chips.push(`服务期 ${o.scPlan.termDays} 天 · 每 ${o.scPlan.cycleDays} 天结算`,`已结算 ${done}/${cs.length} 期`);}}catch{}if(Number(o.replaceUsed)>0)chips.push(`已换人 ${o.replaceUsed}/1`);return chips;}
+function ucOrderCard(o){const provider=FE.side==='provider',partyId=provider?o.buyer:o.provider,party=String(provider?userName(o.buyer):providerName(o.provider)).split(' · ')[0],time=o.scPlan?.time||o.time||'',st=String(o.status||'');
+ const primary=!provider&&st==='待确认'?'确认服务':!provider&&st==='已完成'?'查看与评价':provider&&st==='待服务'?'去履约':'查看详情';
+ const chips=ucPlanChips(o);
+ return `<article class="uc-card uc-edge-${ucTone(st)}"><header class="uc-head"><span class="uc-party">${v23I(provider?'user':'headset')}<b>${e(party)}</b><i>${provider?'用户':'服务者'}</i></span>${ucPill(st)}</header>
+ <button type="button" class="uc-body" data-fe="go" data-id="order|${e(o.id)}"><span class="uc-thumb">${fePortrait(partyId)}</span><span class="uc-main"><b class="uc-title">${e(o.product)}</b><span class="uc-line">${v23I('calendar')}<span>${e(ucRange(o.start,o.end))}${time?' '+e(time):''}</span><span class="uc-tz">${e(uxTzLabel(o.tz))}</span></span>${chips.length?`<span class="uc-chips">${chips.map(c=>`<span>${e(c)}</span>`).join('')}</span>`:''}</span>${ucAmt(provider?'订单金额':'实付',o.paid,o.payment&&o.payment!=='已支付'?o.payment:'')}</button>
+ <footer class="uc-foot"><span class="uc-no">订单号 ${e(o.id)}</span><span class="uc-actions">${feGoBtn(provider?'联系用户':'联系服务者','chat',o.id,'small uc-ghost')}${feGoBtn(primary,'order',o.id,'small primary')}</span></footer></article>`;}
+{const ucOrderBase=feOrderCard;feOrderCard=function(o){return o?.ops12Unmatched?ucOrderBase(o):ucOrderCard(o);};}
+function ucDraftCard(x){return `<article class="uc-card uc-edge-amber"><header class="uc-head"><span class="uc-party">${v23I('clock')}<b>待支付订单</b><i>未支付不产生服务额度</i></span>${ucPill(x.status||'待支付')}</header>
+ <button type="button" class="uc-body" data-fe="go" data-id="pay|${e(x.id)}"><span class="uc-thumb uc-thumb-ico">${v23I('wallet')}</span><span class="uc-main"><b class="uc-title">${e(x.name||'服务预约')}</b><span class="uc-line">${v23I('calendar')}<span>${e(ucDay(x.start))}${x.time?' '+e(x.time):''}</span><span class="uc-tz">${e(uxTzLabel(x.tz||'UTC'))}</span></span></span>${ucAmt('待支付',x.amount)}</button>
+ <footer class="uc-foot"><span class="uc-no">编号 ${e(x.id)}</span><span class="uc-actions">${feGoBtn('继续支付','pay',x.id,'small primary')}</span></footer></article>`;}
+{const ucOrdersBase=FE_PAGES.orders;if(ucOrdersBase)FE_PAGES.orders=function(...args){return ucOrdersBase(...args).replace(/<div class="fe-order-card"><div class="fe-between"><span class="fe-id">([^<]+)<\/span>[\s\S]*?<\/footer><\/div>/g,(m,id)=>{const x=db.feDrafts.find(d=>d.id===id);return x?ucDraftCard(x):m;});};}
+{const ucAgentOrdersBase=FE_PAGES.agentOrders;if(ucAgentOrdersBase)FE_PAGES.agentOrders=function(...args){return ucAgentOrdersBase(...args).replace(/<article class="fe-order-card"><div class="fe-between"><span class="fe-id">([^<]+)<\/span>[\s\S]*?<\/footer><\/article>/g,(m,id)=>{const o=getBy('orders',id);if(!o)return m;
+ return `<article class="uc-card uc-edge-${ucTone(o.status)}"><header class="uc-head"><span class="uc-party">${v23I('headset')}<b>${e(String(providerName(o.provider)).split(' · ')[0])}</b><i>服务者</i></span>${ucPill(o.status)}</header><button type="button" class="uc-body" data-fe="go" data-id="agentOrder|${e(o.id)}"><span class="uc-thumb">${fePortrait(o.provider)}</span><span class="uc-main"><b class="uc-title">${e(o.product)}</b><span class="uc-line">${v23I('calendar')}<span>${e(ucRange(o.start,o.end))}</span><span class="uc-tz">${e(uxTzLabel(o.tz))}</span></span><span class="uc-chips"><span>购买方身份已隐去</span><span>代理快照：本人</span></span></span>${ucAmt('累计实付',o.paid)}</button><footer class="uc-foot"><span class="uc-no">订单号 ${e(o.id)}</span><span class="uc-actions">${feGoBtn('经营详情','agentOrder',o.id,'small primary')}</span></footer></article>`;});};}
+
+/* ---------- Record rows (earnings, commission, withdrawals) ---------- */
+function ucRow({icon='doc',title,sub='',amt,amtLabel='',status='',go='',extra='',tone=''}){const tag=go?'button type="button" data-fe="go" data-id="'+e(go)+'"':'div';const close=go?'button':'div';
+ return `<${tag} class="uc-row"><span class="uc-row-ico ${tone?'uc-'+tone:''}">${v23I(icon)}</span><span class="uc-row-main"><b>${title}</b>${sub?`<small>${sub}</small>`:''}</span><span class="uc-row-side">${amt!==undefined?`<b>${money(amt)}</b>`:''}${amtLabel?`<small>${e(amtLabel)}</small>`:''}${status?ucPill(status):''}</span></${close}>${extra}`;}
+function ucReplacePanel(html,title,inner){const start=html.indexOf(`<div class="fe-panel"><h3>${title}</h3>`);if(start<0)return html;const end=uxfElement(html,start,'div');if(end<0)return html;return html.slice(0,start)+`<div class="fe-panel uc-panel"><h3>${title}</h3>${inner}</div>`+html.slice(end);}
+{const ucEarnBase=feEarningsPage;feEarningsPage=function(...args){let html=ucEarnBase(...args);const p=feProvider();if(!p)return html;
+ const ws=db.withdrawals.filter(w=>w.provider===p.id),bills=db.bills.filter(x=>x.provider===p.id);
+ html=ucReplacePanel(html,'提现记录',ws.length?ws.map(w=>ucRow({icon:'wallet',tone:ucTone(w.status),title:'收益提现',sub:`${e(w.createdAt||w.created||'')} · 手续费 ${money(w.fee)} · 净到账 ${money(w.netAmount)}`,amt:w.amount,status:w.status})).join(''):feEmpty('还没有提现申请'));
+ html=ucReplacePanel(html,'账单收益明细',bills.length?bills.map(x=>{const o=getBy('orders',x.order);return ucRow({icon:'doc',title:e(o?.product||'服务账单'),sub:`${e(x.id)} · 已确认 ${money(x.confirmed)} · 已到账 ${money(x.payout)}`,amt:balance(x),amtLabel:'可提现',go:'order|'+x.order});}).join(''):'<p class="fe-small">暂无账单</p>');
+ return html;};}
+{const ucAgentEarnBase=FE_PAGES.agentEarnings;if(ucAgentEarnBase)FE_PAGES.agentEarnings=function(...args){let html=ucAgentEarnBase(...args);let a;try{a=ops11RequireAgent();}catch{return html;}
+ const rs=db.revenues.filter(r=>r.agentId===a.id),ws=db.agentWithdrawals.filter(w=>w.agentId===a.id);
+ html=ucReplacePanel(html,'我的佣金明细',rs.length?rs.map(r=>{const o=getBy('orders',r.order),hold=[[r.agentFrozen,'保全'],[r.agentOccupied,'占用'],[r.agentPaid,'已付']].filter(([v])=>Number(v)>0).map(([v,l])=>`${l} ${money(v)}`).join(' · ');return ucRow({icon:'users',title:e(o?.product||r.order),sub:`订单号 ${e(r.order)} · 原比例 ${e(r.agentPct)}%${hold?' · '+hold:''}`,amt:r.agentAmount,amtLabel:'本人净应得',status:r.status,go:'agentOrder|'+r.order});}).join(''):'<p class="fe-small">暂无佣金记录</p>');
+ html=ucReplacePanel(html,'我的提现申请',ws.length?ws.map(w=>ucRow({icon:'wallet',tone:ucTone(w.status),title:'佣金提现',sub:`${e(feFinanceDateDisplay(w.createdAt||w.created))} · 手续费 ${money(w.fee)} · 净到账 ${money(w.netAmount??w.amount)}${w.supplementReason?' · 补件反馈：'+e(w.supplementReason):''}`,amt:w.amount,status:w.status,extra:w.status==='需补件'?`<div class="uc-row-act" data-agent-withdrawal="${e(w.id)}">${feBtn('补充演示材料','ops11AgentSupplement',w.id,'small soft')}</div>`:''})).join(''):'<p class="fe-small">暂无提现申请</p>');
+ return html;};}
+
+/* ---------- Settings: no station or release identifiers on the user end ---------- */
+{const ucSettingsBase=FE_PAGES.settings;FE_PAGES.settings=function(...args){return ucSettingsBase(...args).replace(/<div><dt>当前分站<\/dt><dd>[^<]*<\/dd><\/div>/,'').replace(/<div><dt>已发布语言版本<\/dt><dd>[^<]*<\/dd><\/div>/,'').replace(/<dl class="fe-facts"><\/dl>/,'');};}
+/* Registration: the station follows the site being visited (or the inviter's station), so the form no longer asks for it. */
+function ucDefaultStation(){return db.stations.find(s=>s.status==='启用'||s.status==='正常')?.id||db.stations[0]?.id||'';}
+{const ucRegisterBase=FE_PAGES.register;FE_PAGES.register=function(...args){return ucRegisterBase(...args).replace(/<label class="fe-field" for="feAuthStation">[\s\S]*?<\/select><\/label>/,m=>{const v=(m.match(/<option value="([^"]+)"[^>]*selected/)||m.match(/<option value="([^"]+)"/)||[,''])[1]||ucDefaultStation();return `<input type="hidden" name="station" value="${e(v)}">`;});};}
+{const ucSubmitBase=feSubmit;feSubmit=function(type,id,fd){if(type==='authRegister'&&fd?.get){const code=String(fd.get('mcnCode')||'').trim();if(code){try{const pr=mcnDB().promoters.find(p=>String(p.code).toUpperCase()===code.toUpperCase());if(pr?.stationId)fd.set('station',pr.stationId);}catch{}}if(!fd.get('station'))fd.set('station',ucDefaultStation());}return ucSubmitBase(type,id,fd);};}
+
+/* ---------- DOM pass after each user-end render ---------- */
+function ucEsc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}
+function ucStationRe(){const names=[...new Set(db.stations.flatMap(s=>[siteLabel(s.id),s.name]).filter(Boolean))].sort((a,b)=>b.length-a.length);return names.length?new RegExp(names.map(ucEsc).join('|'),'g'):null;}
+function ucTidy(v){return v.replace(/(\s*[·•｜|]\s*){2,}/g,' · ').replace(/^\s*[·•｜|、，,]\s*/,'').replace(/\s*[·•｜|、，,]\s*$/,'');}
+function ucPrune(el,root){for(let i=0;el&&el!==root&&i<3;i++){if(el.textContent.trim()||el.querySelector('img,input,select,textarea,video,audio,.fe-photo'))return;const parent=el.parentElement;if(el.tagName==='DD'&&parent?.tagName==='DIV'){parent.remove();return;}if(el.tagName==='OPTION'){el.remove();return;}el.remove();el=parent;}}
+function ucUserEndPass(){if(FE.mode==='admin')return;const root=document.getElementById('feRoot');if(!root||!db)return;const sre=ucStationRe(),zh=ucZh();
+ const tzRe=new RegExp(Object.keys(UC_TZ).filter(k=>k.includes('/')).map(ucEsc).join('|')+'|\\bUTC\\b(?![+\\-−]\\d)','g'),placeRe=new RegExp('\\b('+UC_PLACES.map(([en])=>ucEsc(en)).join('|')+')\\b','g'),placeMap=Object.fromEntries(UC_PLACES);
+ const tzEnRe=new RegExp(Object.keys(UC_TZ).filter(k=>k.includes('/')).map(ucEsc).join('|'),'g');
+ const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT),nodes=[];let n;while((n=walker.nextNode()))nodes.push(n);
+ for(const node of nodes){const p=node.parentElement;if(!p||p.closest('script,style,textarea,[data-fe-user-content],.ux-legal-overlay'))continue;let v=node.nodeValue,changed=false;
+  if(sre&&sre.test(v)){sre.lastIndex=0;v=ucTidy(v.replace(sre,''));changed=true;}sre&&(sre.lastIndex=0);
+  if(zh){const v2=v.replace(tzRe,m=>UC_TZ[m]||m).replace(placeRe,m=>placeMap[m]);if(v2!==v){v=v2;changed=true;}}else{const v2=v.replace(tzEnRe,m=>ucTzEn(m));if(v2!==v){v=v2;changed=true;}}
+  if(changed){node.nodeValue=v;if(!v.trim())ucPrune(p,root);}}
+ if(FE.mode==='h5')for(const t of root.querySelectorAll('#feMain table')){const heads=[...t.querySelectorAll('thead th')].map(th=>th.textContent.trim());if(heads.length<3||t.classList.contains('uc-stack'))continue;t.classList.add('uc-stack');for(const tr of t.querySelectorAll('tbody tr')){if(tr.children.length<2){tr.classList.add('uc-empty-row');continue;}[...tr.children].forEach((td,i)=>{if(heads[i])td.dataset.label=heads[i];});}}}
+{const ucRenderBase=feRender;feRender=function(...args){const out=ucRenderBase(...args);try{ucUserEndPass();}catch(err){console.warn('ucUserEndPass',err);}return out;};}
+
+Object.assign(FE_LOCALE_EN,{'联系服务者':'Contact provider','联系用户':'Contact buyer','确认服务':'Confirm service','查看与评价':'View & review','去履约':'Deliver','订单号':'Order no.','实付':'Paid','订单金额':'Order amount','待支付订单':'Unpaid order','继续支付':'Continue to pay','可提现':'Withdrawable','本人净应得':'My net share','收益提现':'Earnings withdrawal','佣金提现':'Commission withdrawal','累计实付':'Total paid'});

@@ -1,0 +1,53 @@
+/* Avatar picker and uploaded avatars */
+.av-preset,#feRoot.v23 .fe-photo.av-preset{position:absolute;inset:0;display:block;overflow:hidden;border-radius:inherit;background:radial-gradient(ellipse at 50% 18%,#ffffffb3,transparent 75%),var(--av-tone,#ece8f2)}
+.av-preset-cell{position:absolute;display:block;left:50%;top:var(--av-cell-top,12%);width:var(--av-cell-width,100%);aspect-ratio:var(--av-cell-ratio,1);transform:translateX(-50%);background-size:var(--av-size-x) var(--av-size-y);background-position:var(--av-x) var(--av-y);background-repeat:no-repeat}
+.av-preset[data-av-sheet="0"] .av-preset-cell{background-image:url("__AVATAR_SHEET_0__")}
+.av-preset[data-av-sheet="1"] .av-preset-cell{background-image:url("__AVATAR_SHEET_1__")}
+.av-preset[data-av-sheet="2"] .av-preset-cell{background-image:url("__AVATAR_SHEET_2__")}
+.av-preset[data-av-sheet="3"] .av-preset-cell{background-image:url("__AVATAR_SHEET_3__")}
+.av-preset[data-av-sheet="4"] .av-preset-cell{background-image:url("__AVATAR_SHEET_4__")}
+.av-photo{position:absolute;inset:0;display:block;overflow:hidden;border-radius:inherit;background:#f1f5f9}
+.av-photo img{width:100%;height:100%;object-fit:cover;display:block}
+#feRoot .av-picker{margin:0 0 14px;padding:0 0 12px;border-bottom:1px solid #f1f5f9}
+#feRoot .av-current{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+#feRoot .av-current b{display:block;font-size:15px}
+#feRoot .av-current small{display:block;color:#64748b;font-size:12.5px}
+#feRoot .av-preview{position:relative;flex:none;width:72px;height:72px;border-radius:50%;overflow:hidden;background:#f1f5f9;box-shadow:0 0 0 3px #fff,0 0 0 5px #ede9fe}
+#feRoot .av-preview>.fe-photo,#feRoot .av-preview>.ops16-default-avatar{position:absolute;inset:0}
+#feRoot .av-state{display:inline-block;margin-top:4px;font-size:12px;font-weight:600;border-radius:999px;padding:2px 8px}
+#feRoot .av-state.wait{color:#92400e;background:#fef3c7}
+#feRoot .av-state.bad{color:#991b1b;background:#fee2e2}
+#feRoot .av-state.ok{color:#065f46;background:#d1fae5}
+#feRoot .av-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:12px 8px;max-height:246px;overflow-y:auto;padding:5px 4px;overscroll-behavior:contain}
+#feRoot .av-opt[hidden]{display:none!important}
+#feRoot .av-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+#feRoot .av-filters button{font:inherit;font-size:12px;line-height:1.4;padding:6px 10px;border:1px solid #e2e8f0;border-radius:99px;background:#fff;color:#64748b;cursor:pointer}
+#feRoot .av-filters button[aria-pressed="true"]{color:#6d28d9;border-color:#c4b5fd;background:#f5f3ff;font-weight:700}
+#feRoot .av-pagination{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid #f1f5f9}
+#feRoot .av-pagination span{font-size:11px;color:#64748b;text-align:center}
+#feRoot .av-pagination button:disabled{opacity:.4;cursor:default}
+#feRoot .av-personal{display:flex;align-items:center;gap:14px;padding:14px 0 0}
+#feRoot .av-upload-info{flex:1;min-width:0}
+#feRoot .av-upload-info small{display:block;font-size:11px;line-height:1.5;color:#64748b;margin-top:4px}
+#feRoot [data-av-selection]{color:#7c3aed;margin-top:4px;font-size:11px}
+#feRoot .av-opt{position:relative;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+#feRoot .av-opt input{position:absolute;opacity:0;pointer-events:none}
+#feRoot .av-face{position:relative;display:grid;place-items:center;width:52px;height:52px;border-radius:50%;overflow:hidden;background:#f1f5f9;color:#94a3b8;box-shadow:0 0 0 2px transparent;transition:box-shadow .15s,transform .15s}
+#feRoot .av-face>.fe-photo,#feRoot .av-face>.ops16-default-avatar{position:absolute;inset:0}
+#feRoot .av-face svg{width:22px;height:22px}
+#feRoot .av-opt:hover .av-face{transform:translateY(-1px)}
+#feRoot .av-opt input:checked+.av-face{box-shadow:0 0 0 3px #7c3aed}
+#feRoot .av-opt input:focus-visible+.av-face{box-shadow:0 0 0 3px #a78bfa}
+#feRoot .av-opt input:disabled+.av-face{opacity:.55}
+#feRoot .av-opt em{font-style:normal;font-size:11px;color:#64748b;white-space:nowrap}
+#feRoot .av-up .av-face{border:1.5px dashed #cbd5e1;background:#fff}
+#feRoot .av-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:12px}
+#feRoot .av-actions small{color:#64748b;font-size:12px}
+#feRoot .av-upbtn{position:relative;display:inline-flex;align-items:center;gap:4px;cursor:pointer;overflow:hidden}
+#feRoot .av-upbtn svg{width:14px;height:14px}
+#feRoot .av-upbtn input{position:absolute;inset:0;opacity:0;cursor:pointer}
+#feRoot .av-edit{position:relative;flex:none;border:0;background:none;padding:0;cursor:pointer;border-radius:50%}
+#feRoot .av-edit .av-cam{position:absolute;right:-2px;bottom:-2px;width:22px;height:22px;border-radius:50%;background:#7c3aed;color:#fff;display:grid;place-items:center;box-shadow:0 0 0 2px #fff}
+#feRoot .av-edit .av-cam svg{width:12px;height:12px}
+#feRoot .ux-set-me .av-edit .fe-avatar{width:44px;height:44px}
+@media(max-width:520px){#feRoot .av-personal{gap:10px;flex-wrap:wrap}#feRoot .av-upload-info{min-width:160px}#feRoot .av-filters{gap:5px}#feRoot .av-filters button{padding:6px 8px}#feRoot .av-grid{max-height:225px}}

@@ -1,0 +1,24 @@
+{
+  "scope": "Local prototype - regenerated 200 default avatar portraits, distinct hairstyle/face design prompts, centered circular display",
+  "buildSha256": "b34f3346f8a059ab431646282b3a1082a73ef833609c4303a7dea03c85792f51",
+  "sourceDistAndHTTPMatch": true,
+  "unitChecks": {
+    "passed": 218,
+    "failed": 0,
+    "details": "regression-results.json"
+  },
+  "browserChecks": [
+    "All 200 portraits previewed across 5 pages; top and bottom screenshots saved.",
+    "PC and H5 circular display visually checked for headroom, centering and differences in faces and hairstyles.",
+    "Existing chosen avatar 049 persisted after reload and cancellation.",
+    "All five generated sheets preserve PNG alpha; source assets remain available."
+  ],
+  "screenshots": [
+    "avatar-picker-detail.jpg",
+    "pc-avatar-picker.jpg",
+    "h5-centered.jpg"
+  ],
+  "generationRecord": "generation-record.json",
+  "geometryManifest": "/Volumes/pro990/p001/assets/portraits/default-library-centered-20261012/manifest.json",
+  "productionDeployment": false
+}

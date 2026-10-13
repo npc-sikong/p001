@@ -1,0 +1,49 @@
+{
+  "verifiedAt": "2026-10-10T20:07:17.291510+08:00",
+  "prototypeOnly": true,
+  "url": "http://127.0.0.1:8123/#reviews",
+  "source": "/Volumes/pro990/p001/\u966a\u4f34\u670d\u52a1\u5e73\u53f0_\u4e09\u7aef\u4ea4\u4e92\u539f\u578b.html",
+  "distSha256": "b37b21791a603cf176d40b735c57b138fabba2ca1d39e3af6e8ed35ff35b3e09",
+  "sourceDistHttpMatch": true,
+  "mutualReviewsVersion": 2,
+  "checksPassed": {
+    "v22": 26,
+    "mcn": 46,
+    "service": 11,
+    "international_currency": 8,
+    "gender": 25,
+    "demands": 15,
+    "mutual_reviews": 22
+  },
+  "totalChecksPassed": 153,
+  "browser": {
+    "order": "MO202609001",
+    "buyerScore": 4,
+    "providerScore": 5,
+    "bothDirectionsPublishedImmediatelyWithoutAdminApproval": true,
+    "pcAndH5BothDirectionsVerified": true,
+    "hideRemovedBodyScoreAndAverage": true,
+    "restorePreservedContentAndRestoredAverage": true,
+    "restoredAverage": 4.0,
+    "reloadPersistedBothPublishedReviews": true,
+    "legacyPendingMigratedAndDeletedPreserved": true,
+    "reviewApprovalButtonsAndTodosRemoved": true,
+    "consoleWarningsOrErrors": 0
+  },
+  "screenshots": [
+    "admin-final.png",
+    "admin-hidden.png",
+    "buyer-published.png",
+    "h5-hidden.png",
+    "hidden-score.png",
+    "hide-dialog.png",
+    "mutual-h5.png",
+    "mutual-pc.png",
+    "restored-score.png"
+  ],
+  "limitations": [
+    "Local browser-state prototype only",
+    "No production deployment or real payment",
+    "H5 verified in browser prototype, not on a physical device"
+  ]
+}

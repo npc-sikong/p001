@@ -1,0 +1,119 @@
+[
+  {
+    "script": "verify-v22.cjs",
+    "exitCode": 0,
+    "tail": [
+      "DELIVERY CHECKS 25",
+      "PASS 原实物与订阅页面可用，不附加错位预约按钮",
+      "FINAL DELIVERY 26"
+    ]
+  },
+  {
+    "script": "verify-mcn.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 钱包、充值、提现、推广与后台日结页面均可生成",
+      "MCN DELIVERY CHECKS 46",
+      "EXPLANATION ENTRIES frontend=73 admin=142"
+    ]
+  },
+  {
+    "script": "verify-service.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 默认直接由平台处理；后台可改为先由公会处理，只对之后提交的申请生效",
+      "PASS 旧本地数据中未修改过的处理方式迁移为默认直接由平台处理，修改过的保留",
+      "SERVICE ORDER CHECKS 11"
+    ]
+  },
+  {
+    "script": "verify-intl.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 界面词条：译文变量须与原文一致；原文更新后旧译文标记“原文已更新”，展示回退到可用语言",
+      "PASS 首期只开放中文和英语：其他语言为草稿不能开放；用户端只能切换到已发布的中英文并保存到账号；切换语言不改变金额",
+      "INTL CHECKS 8"
+    ]
+  },
+  {
+    "script": "verify-gender.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 当前性别报表去重且分母清晰，不伪造交易事件",
+      "PASS 关联前后台页面、表单及帮助说明均可生成",
+      "TOTAL 25 gender checks passed"
+    ]
+  },
+  {
+    "script": "verify-demands.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 选人持久化失败回滚全部资金、订单与申请记录",
+      "PASS 三端界面与多申请演示可生成，进入审核、报价、私聊、完成各入口",
+      "TOTAL 15 demand bidding checks passed"
+    ]
+  },
+  {
+    "script": "verify-reviews.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 删除已隐藏评价后不能恢复，批量删除同时包含已隐藏与已发布评价",
+      "PASS 旧待审核及需修改评价迁移为已发布，原拒绝评价转隐藏，删除状态不变且无审核待办",
+      "TOTAL 22 mutual review checks passed"
+    ]
+  },
+  {
+    "script": "verify-alignment.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 发布社区帖子 → 后台帖子管理可查到",
+      "PASS 联系客服工单 → 后台客服工单可查到；客服回复后用户收到通知并在工单中看到回复；站长只读",
+      "ALIGNMENT CHECKS 15"
+    ]
+  },
+  {
+    "script": "verify-ux.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 金额标签统一为 USDT：发现页卡片、预约页提示与后台说明不再出现 D 演示币",
+      "PASS 客服工单已接入后台菜单、站长菜单与工作台提醒",
+      "UX CHECKS 7"
+    ]
+  },
+  {
+    "script": "verify-feed.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 我的发布：只显示本人内容并标注审核状态；发布菜单按类型打开发布框",
+      "PASS 列表页图文卡片：陪伴活动、组队房（保留邀请标记）、公会广场、关注与常约",
+      "FEED CHECKS 11"
+    ]
+  },
+  {
+    "script": "verify-images.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 权限：站长只读本站图片审核，不能开关或审核；用户端不能调用后台图片审核",
+      "PASS 已接入后台菜单、站长菜单、工作台提醒与帖子管理的“图片”列",
+      "IMAGE CHECKS 8"
+    ]
+  },
+  {
+    "script": "verify-cards.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 时区与地点：中文显示北京时间、东京时间、世界标准时间，英文显示英文名称",
+      "PASS 首期金额标签统一为 USDT：页面与后台不再出现“（D）”，钱包规则不再写 1 USDT = 1 D",
+      "CARD CHECKS 8"
+    ]
+  },
+  {
+    "script": "verify-avatars.cjs",
+    "exitCode": 0,
+    "tail": [
+      "PASS 保存空间不足时，头像、上传记录与个人资料一起回退，不显示保存成功",
+      "PASS 逐张测量原图分隔行：017—040不带入上一排，全部200个裁切矩形不越界且按原比例显示",
+      "AVATAR CHECKS 16"
+    ]
+  }
+]

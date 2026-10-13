@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-12T18:08:38.906168+08:00",
+  "scope": "Local prototype avatar library, upload and crop correction",
+  "sourceImagesPreserved": true,
+  "regenerated": false,
+  "choices": {
+    "new": 200,
+    "maleStyle": 96,
+    "femaleStyle": 104,
+    "legacy": 16
+  },
+  "cropMethod": "Measured row bounds for each source sheet, 1 pixel horizontal inset, original aspect ratio.",
+  "build": {
+    "bytes": 24683490,
+    "sha256": "f36b1f47177eeda38adc86201d22cba224c85563cafaeb12ab05ec62a599c4c4",
+    "sourceDistAndLocalHTTPMatch": true
+  },
+  "unitChecks": {
+    "total": 218,
+    "passed": 218,
+    "failed": 0,
+    "counts": {
+      "v22": 26,
+      "mcn": 46,
+      "service": 11,
+      "intl": 8,
+      "gender": 25,
+      "demands": 15,
+      "reviews": 22,
+      "alignment": 15,
+      "ux": 7,
+      "feed": 11,
+      "images": 8,
+      "cards": 8,
+      "avatars": 16
+    },
+    "details": "regression-results.json"
+  },
+  "browserChecks": [
+    "All 200 avatars checked across 5 pages, with top and bottom screenshots.",
+    "No previous-row fragments in 017-040 and other sheets.",
+    "Style filters and pagination checked.",
+    "Avatar 200 persisted after reload and reopened on page 5.",
+    "JPG uploaded via native file chooser with 400x400 preview.",
+    "Pending upload retained prior avatar; approving that local test upload activated it in H5.",
+    "H5 saved avatar 031; PC displayed the same saved avatar.",
+    "Canceling another preview preserved avatar 031."
+  ],
+  "screenshots": [
+    "pc-avatar-picker.jpg",
+    "h5-picker.jpg",
+    "page-1-top.jpg",
+    "page-1-bottom.jpg",
+    "page-2-top.jpg",
+    "page-2-bottom.jpg",
+    "page-3-top.jpg",
+    "page-3-bottom.jpg",
+    "page-4-top.jpg",
+    "page-4-bottom.jpg",
+    "page-5-top.jpg",
+    "page-5-bottom.jpg"
+  ],
+  "notes": [
+    "Local prototype only; no production deployment.",
+    "PC full screenshot was captured after the crop correction. Browser connection was interrupted during the last optional recapture; the previously saved and visually verified screenshot is used.",
+    "Existing browser demo data was not cleared."
+  ]
+}

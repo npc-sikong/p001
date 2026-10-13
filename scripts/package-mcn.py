@@ -26,10 +26,12 @@ with urllib.request.urlopen(prototype_url, timeout=10) as response:
     assert response.status == 200
     assert source == response.read(), 'Running HTTP output differs from source'
 
-assert 'MCN DELIVERY CHECKS 46' in (root / 'artifacts/mcn-checks.txt').read_text(encoding='utf-8')
-assert 'FINAL DELIVERY 26' in (root / 'artifacts/mcn-existing-checks.txt').read_text(encoding='utf-8')
-assert 'SERVICE ORDER CHECKS 11' in (root / 'artifacts/service-checks.txt').read_text(encoding='utf-8')
-assert 'INTL CHECKS 8' in (root / 'artifacts/intl-checks.txt').read_text(encoding='utf-8')
+CHECKS = {'verify-v22': 'FINAL DELIVERY 26', 'verify-mcn': 'MCN DELIVERY CHECKS 46', 'verify-service': 'SERVICE ORDER CHECKS 11', 'verify-intl': 'INTL CHECKS 8',
+          'verify-gender': 'TOTAL 25 gender checks passed', 'verify-demands': 'TOTAL 15 demand bidding checks passed', 'verify-reviews': 'TOTAL 22 mutual review checks passed',
+          'verify-alignment': 'ALIGNMENT CHECKS 15', 'verify-ux': 'UX CHECKS 7', 'verify-feed': 'FEED CHECKS 11', 'verify-images': 'IMAGE CHECKS 8', 'verify-cards': 'CARD CHECKS 8', 'verify-avatars': 'AVATAR CHECKS 8'}
+for name, line in CHECKS.items():
+    log = (root / 'artifacts/checks' / (name + '.txt')).read_text(encoding='utf-8')
+    assert line in log and '\nFAIL' not in '\n' + log, name
 acceptance = json.loads((root / 'artifacts/mcn-browser-acceptance.json').read_text(encoding='utf-8'))
 gallery = (root / 'artifacts/mcn-screenshots.html').read_text(encoding='utf-8')
 assert len(acceptance['screenshots']) == 30
@@ -48,18 +50,19 @@ for name in artifact_names:
 
 build_inputs = [
     '.work/v22-built.html', '.work/v23.js', '.work/v23.css',
-    '.work/mcn-promotion.js', '.work/mcn-promotion.css',
-    '.work/mcn-business.js', '.work/mcn-business.css',
-    '.work/wallet-promotion.js', '.work/wallet-promotion.css',
-    '.work/service-cycle.js', '.work/service-cycle.css',
-    '.work/service-cycle.js', '.work/service-cycle.css',
-    '.work/service-cycle.js', '.work/service-cycle.css', '.work/currency.js',
-    'scripts/build-v23.py', 'scripts/verify-v22.cjs', 'scripts/verify-mcn.cjs', 'scripts/verify-service.cjs', 'scripts/verify-intl.cjs',
-    'scripts/package-mcn.py'
-]
+    '.work/mcn-promotion.js', '.work/mcn-promotion.css', '.work/mcn-business.js', '.work/mcn-business.css',
+    '.work/wallet-promotion.js', '.work/wallet-promotion.css', '.work/service-cycle.js', '.work/service-cycle.css', '.work/currency.js',
+    '.work/fashion-portraits.js', '.work/fashion-portraits.css', '.work/gender.js', '.work/gender.css',
+    '.work/demand-bidding.js', '.work/demand-bidding.css', '.work/mutual-reviews.js', '.work/mutual-reviews.css',
+    '.work/ux-polish.js', '.work/ux-polish.css', '.work/ux-feed.js', '.work/ux-feed.css', '.work/post-images.js', '.work/post-images.css', '.work/ux-cards.js', '.work/ux-cards.css', '.work/avatars.js', '.work/avatars.css', 'assets/portraits/fashion-cast-atlas-20261010.png',
+    'scripts/build-v23.py', 'scripts/package-mcn.py', 'scripts/ux-check.cjs', 'scripts/feed-check.cjs', 'scripts/images-check.cjs', 'scripts/cards-check.cjs', 'scripts/avatars-check.cjs', 'scripts/ui-check-v23.cjs',
+] + [f'scripts/{name}.cjs' for name in CHECKS]
 paths = [root / source_name, root / '使用说明.txt']
 paths += [root / name for name in build_inputs]
 paths += [root / 'artifacts' / name for name in artifact_names]
+for folder in ['checks', 'ux', 'gender', 'reviews', 'requests', 'fashion']:
+    paths += [path for path in (root / 'artifacts' / folder).rglob('*') if path.is_file() and not path.name.startswith('.')]
+assert (root / 'artifacts/ux/index.html').is_file()
 paths += [path for path in (root / 'dist').rglob('*') if path.is_file()]
 doc_files = [path for path in (root / 'docs').rglob('*') if path.is_file() and not path.name.startswith('.')]
 for required in ['README.md', '技术架构与技术选型.md', '陪伴服务平台_两端产品架构建议稿.md', '陪伴服务平台_完整产品规划_首稿原文对照.docx',
@@ -69,11 +72,11 @@ for required in ['README.md', '技术架构与技术选型.md', '陪伴服务平
 paths += doc_files
 
 manifest = {
-    'version': 'V23 cycle-settled service orders, configurable dispute routing (default platform), MCN, recharge-based promotion, USDT wallet, multi-currency (station pricing currency + USDT settlement), plus reviewed development docs',
-    'date': '2026-10-06',
+    'version': 'V23 avatar library and uploads, redesigned order cards and record rows, no station names on the user end, Chinese place and time-zone names, post images with an image-review switch, home carousel with back-office settings, 小红书-style community feed and image-card list pages; commercial-grade user end (help center, customer service tickets, settings hub, legal pages); front/back alignment checks; USDT-first phase, gender, demand bidding, mutual reviews, plus development docs',
+    'date': '2026-10-12',
     'prototypeOnly': True,
     'sourceDistAndHttpEqual': True,
-    'nodeChecks': {'serviceOrders': 11, 'newMcn': 46, 'existingV22': 26, 'intl': 8},
+    'nodeChecks': {name: int(re.search(r'\d+', line).group()) for name, line in CHECKS.items()},
     'docs': len(doc_files),
     'screenshots': len(acceptance['screenshots']),
     'files': {
@@ -99,5 +102,5 @@ with zipfile.ZipFile(temporary) as delivery:
     assert delivery.read(source_name) == delivery.read('dist/index.html')
 temporary.replace(zip_path)
 print('Source = dist = HTTP, SHA-256:', digest(source))
-print('Business checks: 11 + 46 + 26 + 8 passed; screenshot assets:', len(acceptance['screenshots']), '; docs:', len(doc_files))
+print('Business checks:', sum(manifest['nodeChecks'].values()), 'passed; screenshot assets:', len(acceptance['screenshots']), '; docs:', len(doc_files))
 print('Verified ZIP:', zip_name, 'files:', len(set(paths)), 'bytes:', zip_path.stat().st_size)

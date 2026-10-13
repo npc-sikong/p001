@@ -1,0 +1,87 @@
+[
+  {
+    "path": "index.html",
+    "sha256": "8812f9d1ad84c8b13bff5c8661762aa019cfec06eecdd66515405cf3014472b3",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "使用说明.txt",
+    "sha256": "c2205d0ea51b0365bc495790bab332493d3e88997cc4b684c0883142a2db7495",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/README.md",
+    "sha256": "316b728c8a9a4b9eaf9e21dfe9e6683808ecbb51c5208fdbe2fb7ac820e893e7",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/acceptance/原型业务检查清单.md",
+    "sha256": "16b855c18abfb499913928daa7f25d023afa45284624696d5d3e1ee5d97c5e0a",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/acceptance/页面与模块对照.md",
+    "sha256": "7ad454027a38555808ca9ce2ba36a195ac7b9805a60827fea4c29859d042030d",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/decisions/待定参数与决策记录.md",
+    "sha256": "99c39511a4716eca0b42829e7849336212e59cef12da1b32e032998dc4648e6e",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/01-账号与身份.md",
+    "sha256": "fc9e6c95b7f6516e605c7524ce0f1de65ba1ace3165d4622b6f57bd898ef1568",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/02-论坛与需求.md",
+    "sha256": "0173c1cad87d1cb62bbbecdfdecfeb8f7b4751caafec1c02adc2294ff22718bf",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/03-商品与交付.md",
+    "sha256": "45dd20ff0001cfe0d844fb6d9c50cb16e3adb1af92683d8eb498003138c55bd2",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/04-订单与资金.md",
+    "sha256": "5f2a5dcd140973d135a99c598aea374d59f8ff7567f2cdf50fe8acc5cfa2dd11",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/05-售后与申诉.md",
+    "sha256": "85d0d9a058d61b9a10405a9a9c8fd0c05a8f93416ea56d99fddb0e8c7b041cb2",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/06-代理与分成.md",
+    "sha256": "6d549b1753fc6135efb1c9843954514c21a366a42b4b092bb32b72d161af29a9",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/07-公共能力.md",
+    "sha256": "d724982d3886fdc56cf4a025db2efabc03663df45359a9f35ab966c2d42ee056",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/modules/README.md",
+    "sha256": "11deb705d2201a3c0589d116f3739ad0ebdee9700d168c75d68e7d75311a647d",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/修改说明.md",
+    "sha256": "901e0b70c9ccc355d1cd5a74428d69c37d6857e2ec88da0e5b28f5dddac180f3",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/技术架构与技术选型.md",
+    "sha256": "9946ab82b2ba839b55faa0017baba8d0d70860bb22c202261a4c57d68a594e67",
+    "sourceDistHttpMatch": true
+  },
+  {
+    "path": "docs/陪伴服务平台_两端产品架构建议稿.md",
+    "sha256": "6357361d87f0685284d370e114349d97f62e4d98b66531e72f64f57632b792ac",
+    "sourceDistHttpMatch": true
+  }
+]

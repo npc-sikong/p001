@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-10-10T17:46:57.689631+08:00",
+  "prototypeOnly": true,
+  "version": "V23",
+  "url": "http://127.0.0.1:8123/#reviews",
+  "sha256": "767a1f9313bd0d8d315ad24cd5e0fc9b5baa6c6e38a5e9ed020620413d5e99e0",
+  "sourceDistHttpIdentical": true,
+  "buildInfoHashMatches": true,
+  "checks": {
+    "v22": 26,
+    "mcn": 46,
+    "service": 11,
+    "intl": 8,
+    "gender": 25,
+    "demands": 15,
+    "reviews": 18
+  },
+  "totalPassed": 149,
+  "browser": {
+    "surface": "Codex in-app browser",
+    "mode": "PC preview and H5 simulated phone frame",
+    "consoleErrorsOrWarnings": 0,
+    "scenarios": [
+      "同一笔已付待服务订单，林小满给陆听风4分，陆听风给林小满5分，后台发布后PC/H5双方可见",
+      "待审核评价仅作者可见正文与分数，审核后计入被评价人的均分",
+      "管理员核对预览与原因，删除单条4分评价；陆听风均分由4.5变5.0，删除正文在前台隐藏",
+      "管理员核对发布者与五条记录，批量删除林小满发表的剩余5条示例评价；其收到的服务者5分评价保留",
+      "删除后陆听风有效已发布评价数为0，个人均分为空；公开服务者主页显示暂无评分且没有已发布评价",
+      "刷新后删除记录保留，后台详情可查原文、删除原因、操作人及时间",
+      "最终个人中心侧栏、订单详情、H5及后台评价管理入口可访问"
+    ]
+  },
+  "screenshots": [
+    "admin-final.png",
+    "bulk-frontend.png",
+    "buyer-form.png",
+    "delete-bulk-dialog.png",
+    "delete-bulk-result.png",
+    "delete-single-dialog.png",
+    "delete-single-result.png",
+    "deletion-detail.png",
+    "mutual-h5.png",
+    "mutual-pc.png",
+    "order-final-h5.png",
+    "order-final-pc.png",
+    "provider-form.png",
+    "public-after-delete.png",
+    "received-preserved.png",
+    "single-frontend.png"
+  ],
+  "limits": [
+    "仅浏览器本地模拟，不接真实API、消息、支付或后台服务",
+    "H5使用原型手机框，未进行真实设备测试",
+    "本次未发布到线上"
+  ]
+}

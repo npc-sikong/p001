@@ -1,0 +1,543 @@
+{
+  "image": "/Volumes/pro990/p001/assets/portraits/user-avatar-atlas-40-upright-20261012.png",
+  "tool": "built-in image_gen",
+  "format": "PNG",
+  "mode": "RGBA",
+  "width": 1586,
+  "height": 992,
+  "alphaRange": [
+    0,
+    255
+  ],
+  "fullyTransparentPixels": 586046,
+  "columns": 8,
+  "rows": 5,
+  "womenByVisualInspection": 20,
+  "menByVisualInspection": 20,
+  "uprightFrontalHeadsByVisualInspection": true,
+  "facialStructureAndAdultAgeVariationByVisualInspection": true,
+  "sha256": "d9178048e44a0b8973f71265d04b2f45d4a9234299fac28a57b69f7e5cc6df1d",
+  "finalPrompt": "upright-distinct-prompt.txt",
+  "cells": [
+    {
+      "row": 1,
+      "column": 1,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        0,
+        0,
+        198,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 15113
+    },
+    {
+      "row": 1,
+      "column": 2,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        198,
+        0,
+        396,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 15756
+    },
+    {
+      "row": 1,
+      "column": 3,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        396,
+        0,
+        595,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 17649
+    },
+    {
+      "row": 1,
+      "column": 4,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        595,
+        0,
+        793,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 17227
+    },
+    {
+      "row": 1,
+      "column": 5,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        793,
+        0,
+        991,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 17654
+    },
+    {
+      "row": 1,
+      "column": 6,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        991,
+        0,
+        1190,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 18847
+    },
+    {
+      "row": 1,
+      "column": 7,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1190,
+        0,
+        1388,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 16820
+    },
+    {
+      "row": 1,
+      "column": 8,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1388,
+        0,
+        1586,
+        198
+      ],
+      "visible": true,
+      "transparentPixels": 17430
+    },
+    {
+      "row": 2,
+      "column": 1,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        0,
+        198,
+        198,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 15101
+    },
+    {
+      "row": 2,
+      "column": 2,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        198,
+        198,
+        396,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 17737
+    },
+    {
+      "row": 2,
+      "column": 3,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        396,
+        198,
+        595,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 12065
+    },
+    {
+      "row": 2,
+      "column": 4,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        595,
+        198,
+        793,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 7510
+    },
+    {
+      "row": 2,
+      "column": 5,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        793,
+        198,
+        991,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 16653
+    },
+    {
+      "row": 2,
+      "column": 6,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        991,
+        198,
+        1190,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 16670
+    },
+    {
+      "row": 2,
+      "column": 7,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1190,
+        198,
+        1388,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 16523
+    },
+    {
+      "row": 2,
+      "column": 8,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1388,
+        198,
+        1586,
+        397
+      ],
+      "visible": true,
+      "transparentPixels": 17007
+    },
+    {
+      "row": 3,
+      "column": 1,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        0,
+        397,
+        198,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 14869
+    },
+    {
+      "row": 3,
+      "column": 2,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        198,
+        397,
+        396,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 12532
+    },
+    {
+      "row": 3,
+      "column": 3,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        396,
+        397,
+        595,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 9420
+    },
+    {
+      "row": 3,
+      "column": 4,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        595,
+        397,
+        793,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 9012
+    },
+    {
+      "row": 3,
+      "column": 5,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        793,
+        397,
+        991,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 15326
+    },
+    {
+      "row": 3,
+      "column": 6,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        991,
+        397,
+        1190,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 16341
+    },
+    {
+      "row": 3,
+      "column": 7,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1190,
+        397,
+        1388,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 15251
+    },
+    {
+      "row": 3,
+      "column": 8,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1388,
+        397,
+        1586,
+        595
+      ],
+      "visible": true,
+      "transparentPixels": 14945
+    },
+    {
+      "row": 4,
+      "column": 1,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        0,
+        595,
+        198,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 13942
+    },
+    {
+      "row": 4,
+      "column": 2,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        198,
+        595,
+        396,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 12334
+    },
+    {
+      "row": 4,
+      "column": 3,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        396,
+        595,
+        595,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 9224
+    },
+    {
+      "row": 4,
+      "column": 4,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        595,
+        595,
+        793,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 16211
+    },
+    {
+      "row": 4,
+      "column": 5,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        793,
+        595,
+        991,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 14317
+    },
+    {
+      "row": 4,
+      "column": 6,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        991,
+        595,
+        1190,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 16594
+    },
+    {
+      "row": 4,
+      "column": 7,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1190,
+        595,
+        1388,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 15370
+    },
+    {
+      "row": 4,
+      "column": 8,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1388,
+        595,
+        1586,
+        794
+      ],
+      "visible": true,
+      "transparentPixels": 15401
+    },
+    {
+      "row": 5,
+      "column": 1,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        0,
+        794,
+        198,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 12525
+    },
+    {
+      "row": 5,
+      "column": 2,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        198,
+        794,
+        396,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 9896
+    },
+    {
+      "row": 5,
+      "column": 3,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        396,
+        794,
+        595,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 14432
+    },
+    {
+      "row": 5,
+      "column": 4,
+      "genderByVisualInspection": "female",
+      "bbox": [
+        595,
+        794,
+        793,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 11124
+    },
+    {
+      "row": 5,
+      "column": 5,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        793,
+        794,
+        991,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 14914
+    },
+    {
+      "row": 5,
+      "column": 6,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        991,
+        794,
+        1190,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 14753
+    },
+    {
+      "row": 5,
+      "column": 7,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1190,
+        794,
+        1388,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 15568
+    },
+    {
+      "row": 5,
+      "column": 8,
+      "genderByVisualInspection": "male",
+      "bbox": [
+        1388,
+        794,
+        1586,
+        992
+      ],
+      "visible": true,
+      "transparentPixels": 15983
+    }
+  ]
+}

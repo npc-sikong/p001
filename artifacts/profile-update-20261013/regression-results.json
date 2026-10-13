@@ -1,0 +1,86 @@
+[
+  {
+    "suite": "v22",
+    "exitCode": 0,
+    "passed": 26,
+    "failed": 0
+  },
+  {
+    "suite": "mcn",
+    "exitCode": 0,
+    "passed": 46,
+    "failed": 0
+  },
+  {
+    "suite": "service",
+    "exitCode": 0,
+    "passed": 11,
+    "failed": 0
+  },
+  {
+    "suite": "intl",
+    "exitCode": 0,
+    "passed": 8,
+    "failed": 0
+  },
+  {
+    "suite": "gender",
+    "exitCode": 0,
+    "passed": 25,
+    "failed": 0
+  },
+  {
+    "suite": "demands",
+    "exitCode": 0,
+    "passed": 15,
+    "failed": 0
+  },
+  {
+    "suite": "reviews",
+    "exitCode": 0,
+    "passed": 22,
+    "failed": 0
+  },
+  {
+    "suite": "alignment",
+    "exitCode": 0,
+    "passed": 15,
+    "failed": 0
+  },
+  {
+    "suite": "ux",
+    "exitCode": 0,
+    "passed": 7,
+    "failed": 0
+  },
+  {
+    "suite": "feed",
+    "exitCode": 0,
+    "passed": 11,
+    "failed": 0
+  },
+  {
+    "suite": "images",
+    "exitCode": 0,
+    "passed": 8,
+    "failed": 0
+  },
+  {
+    "suite": "cards",
+    "exitCode": 0,
+    "passed": 8,
+    "failed": 0
+  },
+  {
+    "suite": "avatars",
+    "exitCode": 0,
+    "passed": 16,
+    "failed": 0
+  },
+  {
+    "suite": "profile",
+    "exitCode": 0,
+    "passed": 8,
+    "failed": 0
+  }
+]

@@ -1,0 +1,79 @@
+/* Order cards, record rows, H5 stacked tables */
+#feRoot .uc-card{position:relative;background:#fff;border:1px solid #eef0f4;border-radius:18px;margin:0 0 12px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 6px 18px rgba(15,23,42,.04);overflow:hidden}
+#feRoot .uc-card::before{content:'';position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 3px 3px 0;background:var(--uc-edge,#c7d2fe)}
+#feRoot .uc-edge-amber{--uc-edge:#f59e0b}
+#feRoot .uc-edge-amber .uc-party>svg{color:#f59e0b}
+#feRoot .uc-edge-blue{--uc-edge:#6366f1}
+#feRoot .uc-edge-green{--uc-edge:#10b981}
+#feRoot .uc-edge-red{--uc-edge:#ef4444}
+#feRoot .uc-edge-grey{--uc-edge:#cbd5e1}
+#feRoot .uc-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px 0}
+#feRoot .uc-party{display:flex;align-items:center;gap:8px;min-width:0;font-size:13.5px;color:#0f172a}
+#feRoot .uc-party .fe-avatar{width:24px;height:24px;flex:none}
+#feRoot .uc-party>svg{width:16px;height:16px;color:#6366f1;flex:none}
+#feRoot .uc-party b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#feRoot .uc-party i{font-style:normal;font-size:11px;color:#64748b;background:#f1f5f9;border-radius:6px;padding:1px 6px;white-space:nowrap}
+#feRoot .uc-status{flex:none;font-size:12.5px;font-weight:700;letter-spacing:.02em}
+#feRoot .uc-status.uc-amber{color:#d97706}
+#feRoot .uc-status.uc-blue{color:#4f46e5}
+#feRoot .uc-status.uc-green{color:#059669}
+#feRoot .uc-status.uc-red{color:#dc2626}
+#feRoot .uc-status.uc-grey{color:#94a3b8}
+#feRoot .uc-body{display:flex;align-items:center;gap:12px;width:100%;padding:12px 16px;border:0;background:none;text-align:left;cursor:pointer;font:inherit;color:inherit}
+#feRoot .uc-thumb{position:relative;flex:none;width:64px;height:64px;border-radius:14px;overflow:hidden;background:#f1f5f9}
+#feRoot .uc-thumb .fe-photo{position:absolute;inset:0;border-radius:0}
+#feRoot .uc-thumb-ico{display:grid;place-items:center;background:#fff7ed;color:#f59e0b}
+#feRoot .uc-thumb-ico svg{width:28px;height:28px}
+#feRoot .uc-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+#feRoot .uc-title{font-size:15.5px;font-weight:700;line-height:1.35;color:#0f172a;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+#feRoot .uc-line{display:flex;align-items:center;gap:5px;font-size:12.5px;color:#64748b;line-height:1.4}
+#feRoot .uc-line{flex-wrap:wrap}
+#feRoot .uc-line svg{width:13px;height:13px;flex:none;color:#94a3b8}
+#feRoot .uc-tz{white-space:nowrap;color:#94a3b8}
+#feRoot .uc-tz::before{content:'· ';}
+#feRoot .uc-chips{display:flex;flex-wrap:wrap;gap:5px}
+#feRoot .uc-chips span{font-size:11px;color:#4f46e5;background:#eef2ff;border-radius:6px;padding:2px 7px}
+#feRoot .uc-amt{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:2px;text-align:right}
+#feRoot .uc-amt small{font-size:11.5px;color:#94a3b8}
+#feRoot .uc-amt b{font-size:16px;font-weight:800;color:#0f172a;white-space:nowrap;font-variant-numeric:tabular-nums}
+#feRoot .uc-amt em{font-style:normal;font-size:11px;color:#d97706}
+#feRoot .uc-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 16px 12px;border-top:1px dashed #eef0f4}
+#feRoot .uc-no{font-size:11.5px;color:#94a3b8;font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+#feRoot .uc-actions{display:flex;gap:8px;flex:none}
+#feRoot .uc-actions .fe-btn{border-radius:999px;padding:7px 14px;font-size:13px}
+#feRoot .uc-actions .uc-ghost{background:#fff;border:1px solid #e2e8f0;color:#334155}
+#feRoot.fe-h5 .uc-body{gap:10px;padding:10px 14px}
+#feRoot.fe-h5 .uc-thumb{width:56px;height:56px;border-radius:12px}
+#feRoot.fe-h5 .uc-title{font-size:15px}
+#feRoot.fe-h5 .uc-amt b{font-size:15px}
+#feRoot.fe-h5 .uc-head{padding:11px 14px 0}
+#feRoot.fe-h5 .uc-foot{padding:9px 14px 11px}
+#feRoot.fe-h5 .uc-actions .fe-btn{padding:6px 12px;font-size:12.5px}
+/* record rows */
+#feRoot .uc-panel>h3{margin-bottom:6px}
+#feRoot .uc-row{display:flex;align-items:center;gap:12px;width:100%;padding:12px 2px;border:0;border-top:1px solid #f1f5f9;background:none;text-align:left;font:inherit;color:inherit}
+#feRoot .uc-panel>h3+.uc-row{border-top:0}
+#feRoot button.uc-row{cursor:pointer}
+#feRoot .uc-row-ico{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:#eef2ff;color:#4f46e5}
+#feRoot .uc-row-ico svg{width:18px;height:18px}
+#feRoot .uc-row-ico.uc-amber{background:#fffbeb;color:#d97706}
+#feRoot .uc-row-ico.uc-green{background:#ecfdf5;color:#059669}
+#feRoot .uc-row-ico.uc-red{background:#fef2f2;color:#dc2626}
+#feRoot .uc-row-ico.uc-grey{background:#f1f5f9;color:#94a3b8}
+#feRoot .uc-row-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+#feRoot .uc-row-main b{font-size:14.5px;font-weight:600;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#feRoot .uc-row-main small{font-size:12px;color:#64748b;line-height:1.45}
+#feRoot .uc-row-side{flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:3px;text-align:right}
+#feRoot .uc-row-side b{font-size:15px;font-weight:800;color:#0f172a;font-variant-numeric:tabular-nums;white-space:nowrap}
+#feRoot .uc-row-side small{font-size:11px;color:#94a3b8}
+#feRoot .uc-row-side .uc-status{font-size:11.5px}
+#feRoot .uc-row-act{padding:0 0 10px 50px}
+/* H5: tables become stacked cards */
+#feRoot.fe-h5 table.uc-stack,#feRoot.fe-h5 table.uc-stack tbody,#feRoot.fe-h5 table.uc-stack tr,#feRoot.fe-h5 table.uc-stack td{display:block;width:100%}
+#feRoot.fe-h5 table.uc-stack thead{display:none}
+#feRoot.fe-h5 table.uc-stack{border:0;background:none}
+#feRoot.fe-h5 table.uc-stack tr{background:#fff;border:1px solid #eef0f4;border-radius:14px;padding:8px 12px;margin:0 0 8px}
+#feRoot.fe-h5 table.uc-stack td{display:flex;justify-content:space-between;gap:12px;border:0;padding:5px 0;font-size:13px;text-align:right;white-space:normal}
+#feRoot.fe-h5 table.uc-stack tr.uc-empty-row td{display:block;text-align:left;color:#64748b;font-weight:400}
+#feRoot.fe-h5 table.uc-stack td[data-label]::before{content:attr(data-label);color:#94a3b8;font-size:12px;text-align:left;flex:none;max-width:45%}
+#feRoot.fe-h5 table.uc-stack td:first-child{font-weight:700;color:#0f172a}
